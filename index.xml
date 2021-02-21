@@ -6,7 +6,41 @@
         <description>Recent content on Gift Box Home</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Thu, 18 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lydia7635.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 21 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lydia7635.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>[Git] 使用 PPA 將 git 升級成較新版 (Ubuntu)</title>
+        <link>https://lydia7635.github.io/post/upgrade-git-to-newer-version-with-ppa/</link>
+        <pubDate>Sun, 21 Feb 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://lydia7635.github.io/post/upgrade-git-to-newer-version-with-ppa/</guid>
+        <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;因為 GitHub 政策改變，會將預設的 branch 設為 main ，發現本地端使用 git init 時還是以 master 當成預設。在工作站使用 &lt;code&gt;git config --global init.defaultBranch main&lt;/code&gt; 是有效的，但在個人筆電上的 WSL 卻仍是沒有反應。&lt;/p&gt;
+&lt;p&gt;查了一下資料&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;後發現和 git 版本有關，工作站上目前是 2.30.1 ，WSL 目前是 2.25.1 ，而要讓 &lt;code&gt;defaultBranch&lt;/code&gt; 生效，需要讓版本升級為 2.28 以上。&lt;/p&gt;
+&lt;p&gt;如果輸入 &lt;code&gt;sudo apt install git&lt;/code&gt; 讓它重新檢查 git 的版本不會升級，因此需要加入 PPA 個人套件庫。&lt;/p&gt;
+&lt;h2 id=&#34;新增-ppa-個人套件庫&#34;&gt;新增 PPA 個人套件庫&lt;/h2&gt;
+&lt;p&gt;依照此篇指示&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;，依序輸入下列指令
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo add-apt-repository ppa:git-core/ppa
+sudo apt-get update
+sudo apt-get install git&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;安裝完後，使用 &lt;code&gt;git --version&lt;/code&gt; 確認版本。&lt;/p&gt;
+&lt;p&gt;雖然版本是 2.30.0，比工作站上舊，但還是可以使用 &lt;code&gt;defaultBranch&lt;/code&gt; 了。&lt;/p&gt;
+&lt;h2 id=&#34;結語&#34;&gt;結語&lt;/h2&gt;
+&lt;p&gt;平常自己的使用習慣，不會使用到額外的套件庫來裝東西，藉此機會記錄一下使用方式。&lt;/p&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.reddit.com/r/git/comments/jwgn8p/git_init_not_working_as_usual/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Git init not working as usual - Reddit&lt;/a&gt; &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://unix.stackexchange.com/questions/33617/how-can-i-update-to-a-newer-version-of-git-using-apt-get&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ubuntu - How can I update to a newer version of Git using apt-get? - Unix &amp;amp; Linux Stack Exchange&lt;/a&gt; &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description>
+        </item>
+        <item>
         <title>[Telegram] 建立聊天機器人</title>
         <link>https://lydia7635.github.io/post/create-telegram-bot/</link>
         <pubDate>Thu, 18 Feb 2021 00:00:00 +0000</pubDate>
