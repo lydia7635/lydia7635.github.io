@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>chat bot on Gift Box Home</title><link>https://lydia7635.github.io/blog-hugo/tags/chat-bot/</link><description>Recent content in chat bot on Gift Box Home</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 18 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lydia7635.github.io/blog-hugo/tags/chat-bot/index.xml" rel="self" type="application/rss+xml"/><item><title>[Telegram] 建立聊天機器人</title><link>https://lydia7635.github.io/blog-hugo/post/create-telegram-bot/</link><pubDate>Thu, 18 Feb 2021 00:00:00 +0000</pubDate><guid>https://lydia7635.github.io/blog-hugo/post/create-telegram-bot/</guid><description>雖然有網站將教學寫得很清楚了，不過還是來記錄一下。
+操作 首先，先在搜尋框找到 BotFather 並點選 start ，之後會出現各指令的簡單介紹。
+如果未來想再看一次此資訊，可以輸入 /start
+接下來輸入 /newbot 新增一個聊天機器人，並依序輸入對外顯示名稱及機器人 ID。
+其中，對外顯示名稱 (name for bot) 是未來公布聊天機器人的名稱，可以是中文，在此設為 lydia7635_test。而機器人 ID (username for bot) 僅能為英文，不可和他人重複，並且結尾須為 bot ，在此設為 lydia7635_test_bot。
+接下來，拿到的 HTTP API 請勿公開，否則別人可以控制你的聊天機器人。若忘記也可以在和 BotFather 的對話中輸入 /mybots 查詢或修改。
+參考資料 [教學] 第一步: 建立 Telegram聊天機器人 (Chatbot) - LINE官方帳號 &amp;amp; Telegram 行銷專家，幫助你快速上手 | 天長互動創意</description></item></channel></rss>
