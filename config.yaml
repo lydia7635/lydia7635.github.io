@@ -1,4 +1,4 @@
-baseurl: https://lydia7635.github.io/blog-hugo
+baseurl: https://lydia7635.github.io
 languageCode: en-us
 theme: hugo-theme-stack
 paginate: 5
