@@ -1,0 +1,153 @@
+baseurl: https://lydia7635.github.io/blog-hugo
+languageCode: en-us
+theme: hugo-theme-stack
+paginate: 5
+title: Gift Box Home
+
+# Change it to your Disqus shortname before using
+disqusShortname: lydia7635
+
+# GA Tracking ID
+googleAnalytics:
+
+# Theme i18n support
+# Available values: en, fr, id, ja, ko, pt-br, zh-cn
+DefaultContentLanguage: en
+
+# enable inline shortcodes
+enableInlineShortcodes: true
+
+permalinks:
+    post: /post/:slug/
+    page: /:slug/
+
+params:
+    mainSections:
+        - post
+    featuredImageField: image
+    rssFullContent: true
+    favicon:
+
+    footer:
+        since: 2021
+        customText:
+
+    dateFormat:
+        published: Jan 02, 2006
+        lastUpdated: Jan 02, 2006 15:04 UTC+8
+
+    sidebar:
+        emoji: 🎁
+        subtitle: Studying.
+        avatar:
+            local: true
+            src: img/avatar.png
+        social:
+            Github: lydia7635
+
+    article:
+        math: false
+        license:
+            enabled: false
+            default: Licensed under CC BY-NC-SA 4.0
+
+    comments:
+        enabled: true
+        provider: disqus
+
+        utterances:
+            repo:
+            issueTerm: pathname
+            label:
+
+        remark42:
+            host:
+            site:
+            locale:
+
+    widgets:
+        enabled:
+            - search
+            - archives
+            - tag-cloud
+
+        archives:
+            limit: 5
+
+        tagCloud:
+            limit: 10
+
+    opengraph:
+        twitter:
+            # Your Twitter username
+            site: lydia7635
+
+            # Available values: summary, summary_large_image
+            card: summary
+
+    defaultImage:
+        opengraph:
+            enabled: false
+            local: false
+            src: 
+
+    colorScheme:
+        # Display toggle
+        toggle: true
+
+        # Available values: auto, light, dark
+        default: auto
+
+    imageProcessing:
+        cover:
+            enabled: true
+        content:
+            enabled: true
+
+menu:
+    main:
+        - identifier: home
+          name: Home
+          url: /
+          weight: -100
+          pre: home
+
+        - identifier: about
+          name: About
+          url: about
+          weight: -90
+          pre: user
+
+        - identifier: archives
+          name: Archives
+          url: archives
+          weight: -70
+          pre: archives
+
+        - identifier: search
+          name: Search
+          url: search
+          weight: -60
+          pre: search
+
+related:
+    includeNewer: true
+    threshold: 60
+    toLower: false
+    indices:
+        - name: tags
+          weight: 100
+
+        - name: categories
+          weight: 200
+
+markup:
+    highlight:
+        guessSyntax: true
+        lineNos: true
+        tabWidth: 4
+        style: monokai
+        noClasses: true
+    goldmark:
+        renderer:
+            unsafe: true
