@@ -1,11 +1,9 @@
 ---
-author: Yu-Yu Chen
 title: "[Telegram] 建立聊天機器人"
 slug: create-telegram-bot
 image: /img/post/telegram-pixabay.jpg
 date: 2021-02-18
 description: telegram 建立聊天機器人的簡單記錄
-draft: false
 
 tags: 
   - telegram

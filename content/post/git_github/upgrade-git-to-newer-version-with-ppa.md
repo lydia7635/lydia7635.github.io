@@ -1,10 +1,8 @@
 ---
-author: Yu-Yu Chen
 title: "[Git] 使用 PPA 將 git 升級成較新版 (Ubuntu)"
 slug: upgrade-git-to-newer-version-with-PPA
 date: 2021-02-21
 description: 利用 PPA 升級 git
-draft: false
 
 tags: 
   - git
@@ -26,7 +24,7 @@ categories:
 ## 新增 PPA 個人套件庫
 
 依照此篇指示[^2]，依序輸入下列指令
-{{< highlight bash "linenos=false" >}}
+{{< highlight fish "linenos=false" >}}
 sudo add-apt-repository ppa:git-core/ppa
 sudo apt-get update
 sudo apt-get install git
