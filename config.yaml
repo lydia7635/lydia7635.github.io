@@ -2,7 +2,7 @@ baseurl: https://lydia7635.github.io
 languageCode: zh-tw
 theme: hugo-theme-stack
 paginate: 10
-title: Gift Box Home
+title: Tech Gift Box
 
 # Change it to your Disqus shortname before using
 disqusShortname: lydia7635
@@ -37,7 +37,7 @@ params:
         - post
     featuredImageField: image
     rssFullContent: true
-    favicon:
+    favicon: /img/favicon.ico
 
     footer:
         since: 2021
@@ -48,8 +48,8 @@ params:
         lastUpdated: 2006/01/02 15:04 UTC+8
 
     sidebar:
-        emoji: 🎁
-        subtitle: Hello~~
+        emoji: 💻
+        subtitle: Hello! Welcome to Tech Gift Box :)
         avatar:
             local: true
             src: img/avatar.png
