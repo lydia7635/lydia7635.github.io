@@ -2,11 +2,11 @@
 <head><meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="前言 雖然 hugo-theme-stack 這個主題，剛開始看的時候覺得簡單乾淨，也很符合個人審美觀，但看久了還是覺得一些地方可以稍加改進。 Theme 掛載 其實這部分和修改並沒有直接的"><title>[Hugo] 修改 Hugo Stack 主題</title>
 <link rel=canonical href=https://lydia7635.github.io/p/modify-hugo-theme-stack/>
-<link rel=stylesheet href=/scss/style.min.ae00a78e577fbfd2d758f29bbe4f90e1efdd47d5fc447f5eafb89c1432c5243a.css><meta property="og:title" content="[Hugo] 修改 Hugo Stack 主題">
+<link rel=stylesheet href=/scss/style.min.f645e8cb4fd52d3b5ed03aa978c1a7e3f6e61979c120af4785a2a77a75c43b20.css><meta property="og:title" content="[Hugo] 修改 Hugo Stack 主題">
 <meta property="og:description" content="前言 雖然 hugo-theme-stack 這個主題，剛開始看的時候覺得簡單乾淨，也很符合個人審美觀，但看久了還是覺得一些地方可以稍加改進。 Theme 掛載 其實這部分和修改並沒有直接的">
 <meta property="og:url" content="https://lydia7635.github.io/p/modify-hugo-theme-stack/">
 <meta property="og:site_name" content="Tech Gift Box">
-<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="Hugo"><meta property="article:published_time" content="2022-02-18T00:00:00+00:00"><meta property="article:modified_time" content="2022-02-18T22:25:28+08:00">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="Hugo"><meta property="article:published_time" content="2022-02-18T00:00:00+00:00"><meta property="article:modified_time" content="2022-02-18T23:51:52+08:00">
 <meta name=twitter:site content="@lydia7635">
 <meta name=twitter:creator content="@lydia7635"><meta name=twitter:title content="[Hugo] 修改 Hugo Stack 主題">
 <meta name=twitter:description content="前言 雖然 hugo-theme-stack 這個主題，剛開始看的時候覺得簡單乾淨，也很符合個人審美觀，但看久了還是覺得一些地方可以稍加改進。 Theme 掛載 其實這部分和修改並沒有直接的">
@@ -278,6 +278,121 @@ Development
 </div>
 </div>
 <p>可惜的是，目前不能隨著主題自動設定相對應顏色。</p>
+<h3 id=scrollbar-調整>scrollbar 調整</h3>
+<p>覺得頁面與程式碼區塊的 scrollbar 太粗，並且程式碼區塊的 scrollbar 持續顯示有點醜，所以也設定一下。</p>
+<p>欲設定頁面的 scroll bar ，在 <code>hugo-theme-stack/assets/scss/partials/base.scss</code> 修改：
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span></span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span></span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span></span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scss data-lang=scss><span style=color:#ff79c6>*</span> {
+<span style=display:block;width:100%;background-color:#3d3f4a>    <span style=color:#50fa7b>scrollbar-width</span><span style=color:#ff79c6>:</span> thin;
+</span>    <span style=color:#50fa7b>scrollbar-color</span><span style=color:#ff79c6>:</span> <span style=color:#50fa7b>var</span>(<span style=color:#ff79c6>--</span>scrollbar-thumb) transparent;
+}
+<span style=color:#6272a4>/**/</span>
+
+<span style=color:#6272a4>/* scrollbar styles for Chromium */</span>
+::-webkit-scrollbar {
+<span style=display:block;width:100%;background-color:#3d3f4a>    <span style=color:#50fa7b>width</span><span style=color:#ff79c6>:</span> <span style=color:#bd93f9>1</span><span style=color:#8be9fd>rem</span>;
+</span><span style=display:block;width:100%;background-color:#3d3f4a>    <span style=color:#50fa7b>height</span><span style=color:#ff79c6>:</span> <span style=color:#bd93f9>1</span><span style=color:#8be9fd>rem</span>;
+</span>}</code></pre></td></tr></table>
+</div>
+</div></p>
+<p><code>::-webkit-scrollbar</code> 中的 <code>height</code> 也需一併設定，才會套用到程式碼區塊。</p>
+<p>欲設定 scrollbar 圓角，也編輯相同檔案：</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span></span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scss data-lang=scss><span style=color:#6272a4>/* scrollbar styles for Chromium */</span>
+::-webkit-scrollbar-thumb {
+<span style=display:block;width:100%;background-color:#3d3f4a>    <span style=color:#50fa7b>border-radius</span><span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span><span style=color:#8be9fd>px</span>;
+</span>    <span style=color:#50fa7b>background-color</span><span style=color:#ff79c6>:</span> <span style=color:#50fa7b>var</span>(<span style=color:#ff79c6>--</span>scrollbar-thumb);
+}</code></pre></td></tr></table>
+</div>
+</div>
+<p>不過目前 Firefox 並不支援設定 scrollbar 圓角，希望之後會盡快推出。</p>
+<p>接下來編輯程式碼區塊中，將滑鼠移至該區塊才顯現 scrollbar 的設定。在 <code>hugo-theme-stack/assets/scss/partials/layout/article.scss</code> 加上以下兩個段落：
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span></span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span></span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span></span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span></span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span></span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span></span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span></span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span></span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span></span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span></span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span></span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span></span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span></span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span></span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
+</span></span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
+</span></span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">27
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">28
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scss data-lang=scss><span style=color:#50fa7b>.article-content</span> {
+    <span style=color:#6272a4>// ...
+</span><span style=color:#6272a4></span>    <span style=color:#ff79c6>pre</span> {
+        <span style=color:#6272a4>// ...
+</span><span style=display:block;width:100%;background-color:#3d3f4a><span style=color:#6272a4></span>        ::-webkit-scrollbar-thumb {
+</span><span style=display:block;width:100%;background-color:#3d3f4a>            <span style=color:#50fa7b>visibility</span><span style=color:#ff79c6>:</span> hidden;
+</span><span style=display:block;width:100%;background-color:#3d3f4a>        }
+</span><span style=display:block;width:100%;background-color:#3d3f4a>        <span style=color:#ff79c6>&amp;</span>:hover {
+</span><span style=display:block;width:100%;background-color:#3d3f4a>            ::-webkit-scrollbar-thumb {
+</span><span style=display:block;width:100%;background-color:#3d3f4a>                <span style=color:#50fa7b>visibility</span><span style=color:#ff79c6>:</span> visible;
+</span><span style=display:block;width:100%;background-color:#3d3f4a>            }
+</span><span style=display:block;width:100%;background-color:#3d3f4a>        }
+</span>        <span style=color:#6272a4>// ...
+</span><span style=color:#6272a4></span>    }
+    
+    <span style=color:#50fa7b>.highlight</span> {
+        <span style=color:#6272a4>// ...
+</span><span style=display:block;width:100%;background-color:#3d3f4a><span style=color:#6272a4></span>        ::-webkit-scrollbar-thumb {
+</span><span style=display:block;width:100%;background-color:#3d3f4a>            <span style=color:#50fa7b>visibility</span><span style=color:#ff79c6>:</span> hidden;
+</span><span style=display:block;width:100%;background-color:#3d3f4a>        }
+</span><span style=display:block;width:100%;background-color:#3d3f4a>        <span style=color:#ff79c6>&amp;</span>:hover {
+</span><span style=display:block;width:100%;background-color:#3d3f4a>            ::-webkit-scrollbar-thumb {
+</span><span style=display:block;width:100%;background-color:#3d3f4a>                <span style=color:#50fa7b>visibility</span><span style=color:#ff79c6>:</span> visible;
+</span><span style=display:block;width:100%;background-color:#3d3f4a>            }
+</span><span style=display:block;width:100%;background-color:#3d3f4a>        }
+</span>        <span style=color:#6272a4>// ...
+</span><span style=color:#6272a4></span>    }
+}</code></pre></td></tr></table>
+</div>
+</div></p>
+<p>然後不知為何，使用 <code>scrollbar-width</code> 不能對 Firefox 做類似設定：(</p>
+<p>經測試，在 Edge 與 Chrome 上應該是能正確顯示的，然而筆者沒有 Safari 的測試環境，所以不知道會不會炸掉😥</p>
 <hr>
 <p>未完待續。</p>
 <section class=footnotes role=doc-endnotes>
@@ -381,6 +496,7 @@ Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=
 <li><a href=#修改文章卡片圓角與字型字體>修改文章卡片圓角與字型字體</a></li>
 <li><a href=#調整最後編輯日期出現條件>調整最後編輯日期出現條件</a></li>
 <li><a href=#程式碼區塊調整>程式碼區塊調整</a></li>
+<li><a href=#scrollbar-調整>scrollbar 調整</a></li>
 </ul>
 </li>
 </ul>
