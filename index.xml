@@ -1,4 +1,101 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tech Gift Box</title><link>https://lydia7635.github.io/</link><description>Recent content on Tech Gift Box</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><lastBuildDate>Sun, 21 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lydia7635.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>[Git] 使用 PPA 將 git 升級成較新版 (Ubuntu)</title><link>https://lydia7635.github.io/p/upgrade-git-to-newer-version-with-ppa/</link><pubDate>Sun, 21 Feb 2021 00:00:00 +0000</pubDate><guid>https://lydia7635.github.io/p/upgrade-git-to-newer-version-with-ppa/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tech Gift Box</title><link>https://lydia7635.github.io/</link><description>Recent content on Tech Gift Box</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><lastBuildDate>Fri, 18 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://lydia7635.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>[Hugo] 修改 Hugo Stack 主題</title><link>https://lydia7635.github.io/p/modify-hugo-theme-stack/</link><pubDate>Fri, 18 Feb 2022 00:00:00 +0000</pubDate><guid>https://lydia7635.github.io/p/modify-hugo-theme-stack/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>雖然 &lt;a class="link" href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener"
+>hugo-theme-stack&lt;/a> 這個主題，剛開始看的時候覺得簡單乾淨，也很符合個人審美觀，但看久了還是覺得一些地方可以稍加改進。&lt;/p>
+&lt;h2 id="theme-掛載">Theme 掛載&lt;/h2>
+&lt;p>其實這部分和修改並沒有直接的關係，不過目前打算是要同時保有可能會自己大改的空間，加上偶爾會想將原作者的更新加入，因此採用 fork + submodule 的方式，並且&lt;strong>直接修改&lt;/strong>相關的程式碼。不過因為是大改，就算想發個 PR 幫幫忙也不行了：(&lt;/p>
+&lt;p>雖然 Stack 這個主題很貼心的加入 &lt;code>custom&lt;/code> 檔案，讓使用者自行調整&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>，但等筆者改完後才發現這個東西……（再不看 document 啊 Q_Q）所以筆者並不採用這個方式修改。&lt;/p>
+&lt;h2 id="修改內容">修改內容&lt;/h2>
+&lt;p>筆者有在網路上找到一些針對 Stack 這個主題的修改&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>，大部分也挺符合個人品味，所以也會拿部分來套用。&lt;/p>
+&lt;h3 id="將修改時間移至上方">將修改時間移至上方&lt;/h3>
+&lt;p>文章上方的 detail 原本就有放像是建立日期與預計閱讀時長&lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup>等時間相關資訊，那為何不將修改時間也放在一起呢？&lt;/p>
+&lt;p>從 &lt;code>hugo-theme-stack/layouts/partials/article/components/details.html&lt;/code> 先開始編輯。這裡是設定文章詳細資訊的版面配置，可以在文章上方或文章清單中的預覽看到。
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html"> &amp;lt;&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+{{ partial &amp;#34;helper/icon&amp;#34; &amp;#34;date&amp;#34; }}
+&amp;lt;&lt;span style="color:#f92672">time&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;article-time--published&amp;#34;&lt;/span>&amp;gt;
+{{- .Date.Format (or .Site.Params.dateFormat.published &amp;#34;Jan 02, 2006&amp;#34;) -}}
+&amp;lt;/&lt;span style="color:#f92672">time&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;span style="display:block;width:100%;background-color:#3c3d38"> {{- if ne .Lastmod .Date -}}
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38"> &amp;lt;&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38"> {{ partial &amp;#34;helper/icon&amp;#34; &amp;#34;edit&amp;#34; }}
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38"> &amp;lt;&lt;span style="color:#f92672">time&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;article-time--lastmod&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38"> {{- .Lastmod.Format ( or .Site.Params.dateFormat.lastUpdated &amp;#34;Jan 02, 2006 15:04 MST&amp;#34; ) -}}
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38"> &amp;lt;/&lt;span style="color:#f92672">time&lt;/span>&amp;gt;
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38"> &amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38"> {{- end -}}&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/p>
+&lt;p>加上標示的部分，是從 &lt;code>hugo-theme-stack/layouts/partials/article/components/footer.html&lt;/code> 的相關部分修改而來。
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">{{- if ne .Lastmod .Date -}}
+&amp;lt;&lt;span style="color:#f92672">section&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;article-lastmod&amp;#34;&lt;/span>&amp;gt;
+{{ partial &amp;#34;helper/icon&amp;#34; &amp;#34;clock&amp;#34; }}
+&amp;lt;&lt;span style="color:#f92672">span&lt;/span>&amp;gt;
+{{ T &amp;#34;article.lastUpdatedOn&amp;#34; }} {{ .Lastmod.Format ( or .Site.Params.dateFormat.lastUpdated &amp;#34;Jan 02, 2006 15:04 MST&amp;#34; ) }}
+&amp;lt;/&lt;span style="color:#f92672">span&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#f92672">section&lt;/span>&amp;gt;
+{{- end -}}&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+參考完之後把這段刪掉。&lt;/p>
+&lt;p>另外，可以注意到這邊使用其它 icon 來表示修改日期，可以從 &lt;a class="link" href="https://tablericons.com/" target="_blank" rel="noopener"
+>Tabler Icons&lt;/a> 搜尋想要的 icon 。複製完貼到 &lt;code>hugo-theme-stack/assets/icons/edit.svg&lt;/code> 中，需做以下修改：&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>width=&amp;quot;24&amp;quot;&lt;/code>&lt;/li>
+&lt;li>&lt;code>height=&amp;quot;24&amp;quot;&lt;/code>&lt;/li>
+&lt;li>&lt;code>stroke-width=&amp;quot;2&amp;quot;&lt;/code>&lt;/li>
+&lt;li>&lt;code>stroke=&amp;quot;currentColor&amp;quot;&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>未完待續。&lt;/p>
+&lt;section class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1" role="doc-endnote">
+&lt;p>&lt;a class="link" href="https://docs.stack.jimmycai.com/modify-theme/" target="_blank" rel="noopener"
+>Modify theme | Hugo theme Stack&lt;/a>&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:2" role="doc-endnote">
+&lt;p>相關的網站&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.bigs3.com/" target="_blank" rel="noopener"
+>Bigs3cir&lt;/a>&lt;/li>
+&lt;/ul>
+&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/li>
+&lt;li id="fn:3" role="doc-endnote">
+&lt;p>目前覺得這個功能在本站有點雞肋，就先關掉了&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/section></description></item><item><title>[Git] 使用 PPA 將 git 升級成較新版 (Ubuntu)</title><link>https://lydia7635.github.io/p/upgrade-git-to-newer-version-with-ppa/</link><pubDate>Sun, 21 Feb 2021 00:00:00 +0000</pubDate><guid>https://lydia7635.github.io/p/upgrade-git-to-newer-version-with-ppa/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
 &lt;p>因為 GitHub 政策改變，會將預設的 branch 設為 main ，發現本地端使用 git init 時還是以 master 當成預設。在工作站使用 &lt;code>git config --global init.defaultBranch main&lt;/code> 是有效的，但在個人筆電上的 WSL 卻仍是沒有反應。&lt;/p>
 &lt;p>查了一下資料&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>後發現和 git 版本有關，工作站上目前是 2.30.1 ，WSL 目前是 2.25.1 ，而要讓 &lt;code>defaultBranch&lt;/code> 生效，需要讓版本升級為 2.28 以上。&lt;/p>
 &lt;p>如果輸入 &lt;code>sudo apt install git&lt;/code> 讓它重新檢查 git 的版本不會升級，因此需要加入 PPA 個人套件庫。&lt;/p>

@@ -1,0 +1,255 @@
+<!doctype html><html lang=zh-tw>
+<head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="前言 雖然 hugo-theme-stack 這個主題，剛開始看的時候覺得簡單乾淨，也很符合個人審美觀，但看久了還是覺得一些地方可以稍加改進。 Theme 掛載 其實這部分和修改並沒有直接的"><title>[Hugo] 修改 Hugo Stack 主題</title>
+<link rel=canonical href=https://lydia7635.github.io/p/modify-hugo-theme-stack/>
+<link rel=stylesheet href=/scss/style.min.878da47f6630f2b44af471f04cf7057098c82bb204703a3e6345f9b9b4906edd.css><meta property="og:title" content="[Hugo] 修改 Hugo Stack 主題">
+<meta property="og:description" content="前言 雖然 hugo-theme-stack 這個主題，剛開始看的時候覺得簡單乾淨，也很符合個人審美觀，但看久了還是覺得一些地方可以稍加改進。 Theme 掛載 其實這部分和修改並沒有直接的">
+<meta property="og:url" content="https://lydia7635.github.io/p/modify-hugo-theme-stack/">
+<meta property="og:site_name" content="Tech Gift Box">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="Hugo"><meta property="article:published_time" content="2022-02-18T00:00:00+00:00"><meta property="article:modified_time" content="2022-02-18T14:56:19+08:00">
+<meta name=twitter:site content="@lydia7635">
+<meta name=twitter:creator content="@lydia7635"><meta name=twitter:title content="[Hugo] 修改 Hugo Stack 主題">
+<meta name=twitter:description content="前言 雖然 hugo-theme-stack 這個主題，剛開始看的時候覺得簡單乾淨，也很符合個人審美觀，但看久了還是覺得一些地方可以稍加改進。 Theme 掛載 其實這部分和修改並沒有直接的">
+<link rel="shortcut icon" href=/img/favicon.ico>
+</head>
+<body class="article-page has-toc">
+<script>(function(){const a='StackColorScheme';localStorage.getItem(a)||localStorage.setItem(a,"auto")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
+<div class="container main-container flex
+extended">
+<div id=article-toolbar>
+<a href=/ class=back-home><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="15 6 9 12 15 18"/></svg>
+<span>Back</span>
+</a>
+</div>
+<main class="main full-width">
+<article class=main-article>
+<header class=article-header>
+<div class=article-details>
+<header class=article-category>
+<a href=/categories/tech/ style=background-color:#2a9d8f;color:#fff>
+Technology
+</a>
+</header>
+<h2 class=article-title>
+<a href=/p/modify-hugo-theme-stack/>[Hugo] 修改 Hugo Stack 主題</a>
+</h2>
+<footer class=article-time>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>2022/02/18</time>
+</div><div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit-circle" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 15l8.385-8.415a2.1 2.1.0 00-2.97-2.97L9 12v3h3z"/><path d="M16 5l3 3"/><path d="M9 7.07A7.002 7.002.0 0010 21a7.002 7.002.0 006.929-5.999"/></svg>
+<time class=article-time--lastmod>2022/02/18</time>
+</div>
+</footer>
+</div>
+</header>
+<section class=article-content>
+<h2 id=前言>前言</h2>
+<p>雖然 <a class=link href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener>hugo-theme-stack</a> 這個主題，剛開始看的時候覺得簡單乾淨，也很符合個人審美觀，但看久了還是覺得一些地方可以稍加改進。</p>
+<h2 id=theme-掛載>Theme 掛載</h2>
+<p>其實這部分和修改並沒有直接的關係，不過目前打算是要同時保有可能會自己大改的空間，加上偶爾會想將原作者的更新加入，因此採用 fork + submodule 的方式，並且<strong>直接修改</strong>相關的程式碼。不過因為是大改，就算想發個 PR 幫幫忙也不行了：(</p>
+<p>雖然 Stack 這個主題很貼心的加入 <code>custom</code> 檔案，讓使用者自行調整<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>，但等筆者改完後才發現這個東西……（再不看 document 啊 Q_Q）所以筆者並不採用這個方式修改。</p>
+<h2 id=修改內容>修改內容</h2>
+<p>筆者有在網路上找到一些針對 Stack 這個主題的修改<sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>，大部分也挺符合個人品味，所以也會拿部分來套用。</p>
+<h3 id=將修改時間移至上方>將修改時間移至上方</h3>
+<p>文章上方的 detail 原本就有放像是建立日期與預計閱讀時長<sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup>等時間相關資訊，那為何不將修改時間也放在一起呢？</p>
+<p>從 <code>hugo-theme-stack/layouts/partials/article/components/details.html</code> 先開始編輯。這裡是設定文章詳細資訊的版面配置，可以在文章上方或文章清單中的預覽看到。
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span></span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span></span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span></span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span></span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span></span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span></span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span></span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span></span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>    &lt;<span style=color:#f92672>div</span>&gt;
+        {{ partial &#34;helper/icon&#34; &#34;date&#34; }}
+        &lt;<span style=color:#f92672>time</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;article-time--published&#34;</span>&gt;
+            {{- .Date.Format (or .Site.Params.dateFormat.published &#34;Jan 02, 2006&#34;) -}}
+        &lt;/<span style=color:#f92672>time</span>&gt;
+    &lt;/<span style=color:#f92672>div</span>&gt;
+
+<span style=display:block;width:100%;background-color:#3c3d38>    {{- if ne .Lastmod .Date -}}
+</span><span style=display:block;width:100%;background-color:#3c3d38>    &lt;<span style=color:#f92672>div</span>&gt;
+</span><span style=display:block;width:100%;background-color:#3c3d38>        {{ partial &#34;helper/icon&#34; &#34;edit&#34; }}
+</span><span style=display:block;width:100%;background-color:#3c3d38>        &lt;<span style=color:#f92672>time</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;article-time--lastmod&#34;</span>&gt;
+</span><span style=display:block;width:100%;background-color:#3c3d38>            {{- .Lastmod.Format ( or .Site.Params.dateFormat.lastUpdated &#34;Jan 02, 2006 15:04 MST&#34; ) -}}
+</span><span style=display:block;width:100%;background-color:#3c3d38>        &lt;/<span style=color:#f92672>time</span>&gt;
+</span><span style=display:block;width:100%;background-color:#3c3d38>    &lt;/<span style=color:#f92672>div</span>&gt;
+</span><span style=display:block;width:100%;background-color:#3c3d38>    {{- end -}}</span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p>加上標示的部分，是從 <code>hugo-theme-stack/layouts/partials/article/components/footer.html</code> 的相關部分修改而來。
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>{{- if ne .Lastmod .Date -}}
+&lt;<span style=color:#f92672>section</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;article-lastmod&#34;</span>&gt;
+    {{ partial &#34;helper/icon&#34; &#34;clock&#34; }}
+    &lt;<span style=color:#f92672>span</span>&gt;
+        {{ T &#34;article.lastUpdatedOn&#34; }} {{ .Lastmod.Format ( or .Site.Params.dateFormat.lastUpdated &#34;Jan 02, 2006 15:04 MST&#34; ) }}
+    &lt;/<span style=color:#f92672>span</span>&gt;
+&lt;/<span style=color:#f92672>section</span>&gt;
+{{- end -}}</code></pre></td></tr></table>
+</div>
+</div>
+參考完之後把這段刪掉。</p>
+<p>另外，可以注意到這邊使用其它 icon 來表示修改日期，可以從 <a class=link href=https://tablericons.com/ target=_blank rel=noopener>Tabler Icons</a> 搜尋想要的 icon 。複製完貼到 <code>hugo-theme-stack/assets/icons/edit.svg</code> 中，需做以下修改：</p>
+<ul>
+<li><code>width="24"</code></li>
+<li><code>height="24"</code></li>
+<li><code>stroke-width="2"</code></li>
+<li><code>stroke="currentColor"</code></li>
+</ul>
+<p>未完待續。</p>
+<section class=footnotes role=doc-endnotes>
+<hr>
+<ol>
+<li id=fn:1 role=doc-endnote>
+<p><a class=link href=https://docs.stack.jimmycai.com/modify-theme/ target=_blank rel=noopener>Modify theme | Hugo theme Stack</a>&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:2 role=doc-endnote>
+<p>相關的網站</p>
+<ul>
+<li><a class=link href=https://www.bigs3.com/ target=_blank rel=noopener>Bigs3cir</a></li>
+</ul>
+&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></li>
+<li id=fn:3 role=doc-endnote>
+<p>目前覺得這個功能在本站有點雞肋，就先關掉了&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</section>
+<footer class=article-footer>
+<section class=article-tags>
+<a href=/tags/hugo/>Hugo</a>
+</section>
+<section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>Licensed under CC BY-NC</span>
+</section>
+</footer>
+</article>
+<aside class=related-contents--wrapper>
+<h2 class=section-title>Related contents</h2>
+<div class=related-contents>
+<div class="flex article-list--tile">
+<article>
+<a href=/p/upgrade-git-to-newer-version-with-ppa/>
+<div class=article-details>
+<h2 class=article-title>[Git] 使用 PPA 將 git 升級成較新版 (Ubuntu)</h2>
+</div>
+</a>
+</article>
+<article class=has-image>
+<a href=/p/create-telegram-bot/>
+<div class=article-image>
+<img src=/img/post/telegram-pixabay.jpg loading=lazy data-key=create-telegram-bot data-hash=/img/post/telegram-pixabay.jpg>
+</div>
+<div class=article-details>
+<h2 class=article-title>[Telegram] 建立聊天機器人</h2>
+</div>
+</a>
+</article>
+</div>
+</div>
+</aside>
+<div class=disqus-container>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//lydia7635.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
+</div>
+<style>.disqus-container{background-color:var(--card-background);border-radius:var(--card-border-radius);box-shadow:var(--shadow-l1);padding:var(--card-padding)}</style>
+<script>window.addEventListener('onColorSchemeChange',a=>{DISQUS&&DISQUS.reset({reload:!0})})</script>
+<footer class=site-footer>
+<section class=copyright>
+&copy;
+2021 -
+2022 Tech Gift Box
+</section>
+<section class=powerby>
+Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> <br>
+Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.8.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
+</section>
+</footer>
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+<div class=pswp__bg></div>
+<div class=pswp__scroll-wrap>
+<div class=pswp__container>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class=pswp__top-bar>
+<div class=pswp__counter></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class=pswp__preloader>
+<div class=pswp__preloader__icn>
+<div class=pswp__preloader__cut>
+<div class=pswp__preloader__donut></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class=pswp__share-tooltip></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class=pswp__caption>
+<div class=pswp__caption__center></div>
+</div>
+</div>
+</div>
+</div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css integrity="sha256-c0uckgykQ9v5k+IqViZOZKc47Jn7KQil4/MP3ySA3F8=" crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE=" crossorigin=anonymous>
+</main>
+<aside class="sidebar right-sidebar sticky">
+<section class="widget archives">
+<div class=widget-icon><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg>
+</div>
+<h2 class="widget-title section-title">Table of contents</h2>
+<div class=widget--toc>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#前言>前言</a></li>
+<li><a href=#theme-掛載>Theme 掛載</a></li>
+<li><a href=#修改內容>修改內容</a>
+<ul>
+<li><a href=#將修改時間移至上方>將修改時間移至上方</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</section>
+</aside>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous></script><script type=text/javascript src=/ts/main.js defer></script>
+<script>(function(){const a=document.createElement('link');a.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",a.type="text/css",a.rel="stylesheet",document.head.appendChild(a)})()</script>
+</body>
+</html>
