@@ -6,7 +6,7 @@
 <meta property="og:description" content="利用 PPA 升級 git">
 <meta property="og:url" content="https://lydia7635.github.io/p/upgrade-git-to-newer-version-with-ppa/">
 <meta property="og:site_name" content="Tech Gift Box">
-<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="git"><meta property="article:tag" content="Ubuntu"><meta property="article:tag" content="apt"><meta property="article:tag" content="PPA"><meta property="article:published_time" content="2021-02-21T00:00:00+00:00"><meta property="article:modified_time" content="2022-02-16T22:10:51+08:00">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="git"><meta property="article:tag" content="Ubuntu"><meta property="article:tag" content="apt"><meta property="article:tag" content="PPA"><meta property="article:published_time" content="2021-02-21T00:00:00+00:00"><meta property="article:modified_time" content="2022-02-18T20:29:16+08:00">
 <meta name=twitter:site content="@lydia7635">
 <meta name=twitter:creator content="@lydia7635"><meta name=twitter:title content="[Git] 使用 PPA 將 git 升級成較新版 (Ubuntu)">
 <meta name=twitter:description content="利用 PPA 升級 git">
@@ -41,7 +41,7 @@ Technology
 <time class=article-time--published>2021/02/21</time>
 </div>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit-circle" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 15l8.385-8.415a2.1 2.1.0 00-2.97-2.97L9 12v3h3z"/><path d="M16 5l3 3"/><path d="M9 7.07A7.002 7.002.0 0010 21a7.002 7.002.0 006.929-5.999"/></svg>
-<time class=article-time--lastmod>2022/02/16</time>
+<time class=article-time--lastmod>2022/02/18</time>
 </div>
 </footer>
 </div>
@@ -49,7 +49,7 @@ Technology
 <section class=article-content>
 <h2 id=前言>前言</h2>
 <p>因為 GitHub 政策改變，會將預設的 branch 設為 main ，發現本地端使用 git init 時還是以 master 當成預設。在工作站使用 <code>git config --global init.defaultBranch main</code> 是有效的，但在個人筆電上的 WSL 卻仍是沒有反應。</p>
-<p>查了一下資料<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>後發現和 git 版本有關，工作站上目前是 2.30.1 ，WSL 目前是 2.25.1 ，而要讓 <code>defaultBranch</code> 生效，需要讓版本升級為 2.28 以上。</p>
+<p>查了一下資料<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>後發現和 git 版本有關，工作站上目前是 2.30.1 ，WSL 目前是 2.25.1 ，而要讓 <code>defaultBranch</code> 生效，需要讓版本升級為 2.28 以上。（22-02-18 更：工作站目前是 2.35.1 ，而 Ubuntu 未做此調整前仍是 2.28 以下）</p>
 <p>如果輸入 <code>sudo apt install git</code> 讓它重新檢查 git 的版本不會升級，因此需要加入 PPA 個人套件庫。</p>
 <h2 id=新增-ppa-個人套件庫>新增 PPA 個人套件庫</h2>
 <p>依照此篇指示<sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>，依序輸入下列指令
@@ -57,7 +57,7 @@ Technology
 <span style=color:#a6e22e>sudo</span> <span style=color:#a6e22e>apt-get</span> update
 <span style=color:#a6e22e>sudo</span> <span style=color:#a6e22e>apt-get</span> install git</code></pre></div></p>
 <p>安裝完後，使用 <code>git --version</code> 確認版本。</p>
-<p>雖然版本是 2.30.0，比工作站上舊，但還是可以使用 <code>defaultBranch</code> 了。</p>
+<p>雖然版本是 2.30.0，比工作站上舊，但還是可以使用 <code>defaultBranch</code> 了。（22-02-18 更：目前也可以升級成和工作站同為 2.35.1 版）</p>
 <h2 id=結語>結語</h2>
 <p>平常自己的使用習慣，不會使用到額外的套件庫來裝東西，藉此機會記錄一下使用方式。</p>
 <section class=footnotes role=doc-endnotes>
