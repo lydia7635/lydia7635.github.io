@@ -149,14 +149,14 @@ menu:
 
 related:
     includeNewer: true
-    threshold: 80
+    threshold: 75
     toLower: false
     indices:
         - name: tags
-          weight: 100
+          weight: 50
 
         - name: categories
-          weight: 200
+          weight: 30
 
 markup:
     highlight:
