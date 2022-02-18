@@ -1,5 +1,6 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
+slug: "{{ .Name }}"
 description: 
 date: {{ .Date }}
 image: 
@@ -8,5 +9,7 @@ license:
 hidden: false
 comments: true
 draft: true
+tags: 
+categories: 
 ---
 
