@@ -66,7 +66,7 @@ categories:
 - `stroke-width="2"`
 - `stroke="currentColor"`
 
-### 修改文章卡片圓角
+### 修改文章卡片圓角與字型字體
 參見這篇[^2] 的修改方式。
 
 在同一個檔案上，也順便修改一下網站字型。
@@ -84,6 +84,8 @@ categories:
 {{< / highlight >}}
 
 然後在 `--zh-font-family` 加上 `"Noto Sans TC"` ，記得要放在所有字型的前面。
+
+字體大小的部分，修改所有的 `--article-font-size` 為 1.6rem 即可。
 
 未完待續。
 
