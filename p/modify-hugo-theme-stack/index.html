@@ -2,18 +2,18 @@
 <head><meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="前言 雖然 hugo-theme-stack 這個主題，剛開始看的時候覺得簡單乾淨，也很符合個人審美觀，但看久了還是覺得一些地方可以稍加改進。 Theme 掛載 其實這部分和修改並沒有直接的"><title>[Hugo] 修改 Hugo Stack 主題</title>
 <link rel=canonical href=https://lydia7635.github.io/p/modify-hugo-theme-stack/>
-<link rel=stylesheet href=/scss/style.min.0cdba1d7a1b2aca958d4a6e60b376db17209d627bb983c25b4724c2148b78725.css><meta property="og:title" content="[Hugo] 修改 Hugo Stack 主題">
+<link rel=stylesheet href=/scss/style.min.3d83f77940d295af4f12cfc1ef274a7953246a5d95ccd4011e5e7cde79c591b4.css><meta property="og:title" content="[Hugo] 修改 Hugo Stack 主題">
 <meta property="og:description" content="前言 雖然 hugo-theme-stack 這個主題，剛開始看的時候覺得簡單乾淨，也很符合個人審美觀，但看久了還是覺得一些地方可以稍加改進。 Theme 掛載 其實這部分和修改並沒有直接的">
 <meta property="og:url" content="https://lydia7635.github.io/p/modify-hugo-theme-stack/">
 <meta property="og:site_name" content="Tech Gift Box">
-<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="Hugo"><meta property="article:published_time" content="2022-02-18T00:00:00+00:00"><meta property="article:modified_time" content="2022-02-18T15:56:36+08:00">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="Hugo"><meta property="article:published_time" content="2022-02-18T00:00:00+00:00"><meta property="article:modified_time" content="2022-02-18T16:47:42+08:00">
 <meta name=twitter:site content="@lydia7635">
 <meta name=twitter:creator content="@lydia7635"><meta name=twitter:title content="[Hugo] 修改 Hugo Stack 主題">
 <meta name=twitter:description content="前言 雖然 hugo-theme-stack 這個主題，剛開始看的時候覺得簡單乾淨，也很符合個人審美觀，但看久了還是覺得一些地方可以稍加改進。 Theme 掛載 其實這部分和修改並沒有直接的">
 <link rel="shortcut icon" href=/img/favicon.ico>
 </head>
 <body class="article-page has-toc">
-<script>(function(){const a='StackColorScheme';localStorage.getItem(a)||localStorage.setItem(a,"auto")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
+<script>(function(){const a='StackColorScheme';localStorage.setItem(a,"dark")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
 <div class="container main-container flex
 extended">
 <div id=article-toolbar>
@@ -120,7 +120,7 @@ Technology
 <li><code>stroke-width="2"</code></li>
 <li><code>stroke="currentColor"</code></li>
 </ul>
-<h3 id=修改文章卡片圓角>修改文章卡片圓角</h3>
+<h3 id=修改文章卡片圓角與字型字體>修改文章卡片圓角與字型字體</h3>
 <p>參見這篇<sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup> 的修改方式。</p>
 <p>在同一個檔案上，也順便修改一下網站字型。</p>
 <p>原本的中文字型如果為粗體，有種筆畫黏在一起的感覺，筆者改成 <a class=link href="https://fonts.google.com/noto/specimen/Noto+Sans+TC?subset=chinese-traditional" target=_blank rel=noopener>Noto Sans Traditional Chinese Light 300</a>。</p>
@@ -130,6 +130,7 @@ Technology
 <p>先在 <code>hugo-theme-stack/assets/scss/variables.scss</code> 最上方加上</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scss data-lang=scss><span style=color:#66d9ef>@import</span> <span style=color:#e6db74>url(&#39;https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&amp;display=swap&#39;)</span>;</code></pre></div>
 <p>然後在 <code>--zh-font-family</code> 加上 <code>"Noto Sans TC"</code> ，記得要放在所有字型的前面。</p>
+<p>字體大小的部分，修改所有的 <code>--article-font-size</code> 為 1.6rem 即可。</p>
 <p>未完待續。</p>
 <section class=footnotes role=doc-endnotes>
 <hr>
@@ -156,28 +157,6 @@ Technology
 </footer>
 </article>
 <aside class=related-contents--wrapper>
-<h2 class=section-title>Related contents</h2>
-<div class=related-contents>
-<div class="flex article-list--tile">
-<article>
-<a href=/p/upgrade-git-to-newer-version-with-ppa/>
-<div class=article-details>
-<h2 class=article-title>[Git] 使用 PPA 將 git 升級成較新版 (Ubuntu)</h2>
-</div>
-</a>
-</article>
-<article class=has-image>
-<a href=/p/create-telegram-bot/>
-<div class=article-image>
-<img src=/img/post/telegram-pixabay.jpg loading=lazy data-key=create-telegram-bot data-hash=/img/post/telegram-pixabay.jpg>
-</div>
-<div class=article-details>
-<h2 class=article-title>[Telegram] 建立聊天機器人</h2>
-</div>
-</a>
-</article>
-</div>
-</div>
 </aside>
 <div class=disqus-container>
 <div id=disqus_thread></div>
@@ -248,7 +227,7 @@ Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=
 <li><a href=#修改內容>修改內容</a>
 <ul>
 <li><a href=#將修改時間移至上方>將修改時間移至上方</a></li>
-<li><a href=#修改文章卡片圓角>修改文章卡片圓角</a></li>
+<li><a href=#修改文章卡片圓角與字型字體>修改文章卡片圓角與字型字體</a></li>
 </ul>
 </li>
 </ul>

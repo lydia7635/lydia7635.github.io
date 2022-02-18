@@ -76,7 +76,7 @@
 &lt;li>&lt;code>stroke-width=&amp;quot;2&amp;quot;&lt;/code>&lt;/li>
 &lt;li>&lt;code>stroke=&amp;quot;currentColor&amp;quot;&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h3 id="修改文章卡片圓角">修改文章卡片圓角&lt;/h3>
+&lt;h3 id="修改文章卡片圓角與字型字體">修改文章卡片圓角與字型字體&lt;/h3>
 &lt;p>參見這篇&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup> 的修改方式。&lt;/p>
 &lt;p>在同一個檔案上，也順便修改一下網站字型。&lt;/p>
 &lt;p>原本的中文字型如果為粗體，有種筆畫黏在一起的感覺，筆者改成 &lt;a class="link" href="https://fonts.google.com/noto/specimen/Noto&amp;#43;Sans&amp;#43;TC?subset=chinese-traditional" target="_blank" rel="noopener"
@@ -87,6 +87,7 @@
 &lt;p>先在 &lt;code>hugo-theme-stack/assets/scss/variables.scss&lt;/code> 最上方加上&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scss" data-lang="scss">&lt;span style="color:#66d9ef">@import&lt;/span> &lt;span style="color:#e6db74">url(&amp;#39;https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&amp;amp;display=swap&amp;#39;)&lt;/span>;&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>然後在 &lt;code>--zh-font-family&lt;/code> 加上 &lt;code>&amp;quot;Noto Sans TC&amp;quot;&lt;/code> ，記得要放在所有字型的前面。&lt;/p>
+&lt;p>字體大小的部分，修改所有的 &lt;code>--article-font-size&lt;/code> 為 1.6rem 即可。&lt;/p>
 &lt;p>未完待續。&lt;/p>
 &lt;section class="footnotes" role="doc-endnotes">
 &lt;hr>
