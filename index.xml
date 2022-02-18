@@ -76,6 +76,17 @@
 &lt;li>&lt;code>stroke-width=&amp;quot;2&amp;quot;&lt;/code>&lt;/li>
 &lt;li>&lt;code>stroke=&amp;quot;currentColor&amp;quot;&lt;/code>&lt;/li>
 &lt;/ul>
+&lt;h3 id="修改文章卡片圓角">修改文章卡片圓角&lt;/h3>
+&lt;p>參見這篇&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup> 的修改方式。&lt;/p>
+&lt;p>在同一個檔案上，也順便修改一下網站字型。&lt;/p>
+&lt;p>原本的中文字型如果為粗體，有種筆畫黏在一起的感覺，筆者改成 &lt;a class="link" href="https://fonts.google.com/noto/specimen/Noto&amp;#43;Sans&amp;#43;TC?subset=chinese-traditional" target="_blank" rel="noopener"
+>Noto Sans Traditional Chinese Light 300&lt;/a>。&lt;/p>
+&lt;figure>&lt;img src="https://lydia7635.github.io/img/post/font-difference.JPG" width="400px"/>
+&lt;/figure>
+&lt;p>來個對照。上半部是修改前，下半部是修改後，看起來應該比較清爽些。&lt;/p>
+&lt;p>先在 &lt;code>hugo-theme-stack/assets/scss/variables.scss&lt;/code> 最上方加上&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scss" data-lang="scss">&lt;span style="color:#66d9ef">@import&lt;/span> &lt;span style="color:#e6db74">url(&amp;#39;https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&amp;amp;display=swap&amp;#39;)&lt;/span>;&lt;/code>&lt;/pre>&lt;/div>
+&lt;p>然後在 &lt;code>--zh-font-family&lt;/code> 加上 &lt;code>&amp;quot;Noto Sans TC&amp;quot;&lt;/code> ，記得要放在所有字型的前面。&lt;/p>
 &lt;p>未完待續。&lt;/p>
 &lt;section class="footnotes" role="doc-endnotes">
 &lt;hr>
@@ -85,12 +96,9 @@
 >Modify theme | Hugo theme Stack&lt;/a>&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li id="fn:2" role="doc-endnote">
-&lt;p>相關的網站&lt;/p>
-&lt;ul>
-&lt;li>&lt;a class="link" href="https://www.bigs3.com/" target="_blank" rel="noopener"
->Bigs3cir&lt;/a>&lt;/li>
-&lt;/ul>
-&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/li>
+&lt;p>&lt;a class="link" href="https://www.bigs3.com/" target="_blank" rel="noopener"
+>Bigs3cir&lt;/a>&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
 &lt;li id="fn:3" role="doc-endnote">
 &lt;p>目前覺得這個功能在本站有點雞肋，就先關掉了&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
