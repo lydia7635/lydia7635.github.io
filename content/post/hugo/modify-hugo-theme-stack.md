@@ -66,9 +66,27 @@ categories:
 - `stroke-width="2"`
 - `stroke="currentColor"`
 
+### 修改文章卡片圓角
+參見這篇[^2] 的修改方式。
+
+在同一個檔案上，也順便修改一下網站字型。
+
+原本的中文字型如果為粗體，有種筆畫黏在一起的感覺，筆者改成 [Noto Sans Traditional Chinese Light 300](https://fonts.google.com/noto/specimen/Noto+Sans+TC?subset=chinese-traditional)。
+
+{{< figure src= "/img/post/font-difference.JPG" width=400px >}}
+
+來個對照。上半部是修改前，下半部是修改後，看起來應該比較清爽些。
+
+先在 `hugo-theme-stack/assets/scss/variables.scss` 最上方加上
+
+{{< highlight scss "linenos=false" >}}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap');
+{{< / highlight >}}
+
+然後在 `--zh-font-family` 加上 `"Noto Sans TC"` ，記得要放在所有字型的前面。
+
 未完待續。
 
 [^1]: [Modify theme | Hugo theme Stack](https://docs.stack.jimmycai.com/modify-theme/)
-[^2]: 相關的網站
-    - [Bigs3cir](https://www.bigs3.com/)
+[^2]: [Bigs3cir](https://www.bigs3.com/)
 [^3]: 目前覺得這個功能在本站有點雞肋，就先關掉了
