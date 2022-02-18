@@ -171,7 +171,7 @@ markup:
         lineNos: true
         lineNumbersInTable: true    # Give copy-and-paste friendly code blocks
         tabWidth: 4
-        style: monokai
+        style: dracula
         noClasses: true             # Use inline styles instead of CSS classes
     goldmark:
         renderer:

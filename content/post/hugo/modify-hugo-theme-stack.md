@@ -116,6 +116,68 @@ categories:
 {{< / highlight >}}
 真是個有點拐彎抹腳的設定😅
 
+### 程式碼區塊調整
+由於預設的程式碼區塊顏色主題為 monokai ，之後想換成 dracula，但發現套用後看起來有奇怪的效果：
+{{< figure src= "/img/post/old-code-block-style.JPG" width=600px >}}
+程式碼區塊又圍了一圈顏色不同的 padding ，而且區塊並不是和文字切齊，而是對齊文章卡片邊緣。
+
+經過一番查詢與修改，最後會設定成這樣：
+{{< figure src= "/img/post/new-code-block-style.JPG" width=600px >}}
+
+首先將 `config.yaml` 的 `markup.highlight.style` 設定為 `dracula`。
+{{< highlight yaml >}}
+markup:
+    highlight:
+        style: dracula
+{{< / highlight >}}
+
+若要將貼齊文章卡片邊緣的設定取消，需修改 `hugo-theme-stack/assets/scss/partials/layout/article.scss`，在檔案最下方的段落中，將 `.highlight` 與 `pre`（非 shortcode 產生的程式碼區塊）那行刪除。
+{{< highlight scss >}}
+    /// Negative margins
+    blockquote,
+    figure,
+    .gallery,
+    .video-wrapper,
+    .table-wrapper,
+    .s_video_simple {
+        margin-left: calc((var(--card-padding)) * -1);
+        margin-right: calc((var(--card-padding)) * -1);
+        width: calc(100% + var(--card-padding) * 2);
+    }
+{{< / highlight >}}
+
+以上是同樣會貼齊文章卡片邊緣的區塊。
+
+而若欲產生區塊圓角，也在同樣檔案中設定：
+{{< highlight scss "hl_lines=6" >}}
+.article-content {
+    // ...
+    .highlight {
+        background-color: var(--pre-background-color);
+        padding: var(--card-padding);
+        border-radius: 5px;
+        position: relative;
+        // ...
+    }
+    // ...
+}
+{{< / highlight >}}
+
+`pre` 的部分也做類似設定。
+
+但此時仍會因為 padding 顏色不同而顯得突兀。修改 `hugo-theme-stack/assets/scss/variables.scss` 最下方為：
+
+{{< highlight scss "hl_lines=3" >}}
+[data-scheme="dark"] {
+    --pre-text-color: #f8f8f2;
+    --pre-background-color: #282a36;
+    @import "partials/highlight/dark.scss";
+}
+{{< / highlight >}}
+
+可惜的是，目前不能隨著主題自動設定相對應顏色。
+
+---
 
 未完待續。
 
