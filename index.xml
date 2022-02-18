@@ -9,45 +9,45 @@
 &lt;h3 id="將最後編輯時間移至上方">將最後編輯時間移至上方&lt;/h3>
 &lt;p>文章上方的 detail 原本就有放像是建立日期與預計閱讀時長&lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup>等時間相關資訊，那為何不將最後編輯時間也放在一起呢？&lt;/p>
 &lt;p>從 &lt;code>hugo-theme-stack/layouts/partials/article/components/details.html&lt;/code> 先開始編輯。這裡是設定文章詳細資訊的版面配置，可以在文章上方或文章清單中的預覽看到。
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3d3f4a">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3d3f4a">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3d3f4a">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3d3f4a">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3d3f4a">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3d3f4a">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3d3f4a">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3d3f4a">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html"> &amp;lt;&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html"> &amp;lt;&lt;span style="color:#ff79c6">div&lt;/span>&amp;gt;
 {{ partial &amp;#34;helper/icon&amp;#34; &amp;#34;date&amp;#34; }}
-&amp;lt;&lt;span style="color:#f92672">time&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;article-time--published&amp;#34;&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#ff79c6">time&lt;/span> &lt;span style="color:#50fa7b">class&lt;/span>&lt;span style="color:#ff79c6">=&lt;/span>&lt;span style="color:#f1fa8c">&amp;#34;article-time--published&amp;#34;&lt;/span>&amp;gt;
 {{- .Date.Format (or .Site.Params.dateFormat.published &amp;#34;Jan 02, 2006&amp;#34;) -}}
-&amp;lt;/&lt;span style="color:#f92672">time&lt;/span>&amp;gt;
-&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
-&lt;span style="display:block;width:100%;background-color:#3c3d38"> {{- if ne .Lastmod .Date -}}
-&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38"> &amp;lt;&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
-&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38"> {{ partial &amp;#34;helper/icon&amp;#34; &amp;#34;edit&amp;#34; }}
-&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38"> &amp;lt;&lt;span style="color:#f92672">time&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;article-time--lastmod&amp;#34;&lt;/span>&amp;gt;
-&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38"> {{- .Lastmod.Format ( or .Site.Params.dateFormat.lastUpdated &amp;#34;Jan 02, 2006 15:04 MST&amp;#34; ) -}}
-&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38"> &amp;lt;/&lt;span style="color:#f92672">time&lt;/span>&amp;gt;
-&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38"> &amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
-&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38"> {{- end -}}&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&amp;lt;/&lt;span style="color:#ff79c6">time&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#ff79c6">div&lt;/span>&amp;gt;
+&lt;span style="display:block;width:100%;background-color:#3d3f4a"> {{- if ne .Lastmod .Date -}}
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3d3f4a"> &amp;lt;&lt;span style="color:#ff79c6">div&lt;/span>&amp;gt;
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3d3f4a"> {{ partial &amp;#34;helper/icon&amp;#34; &amp;#34;edit&amp;#34; }}
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3d3f4a"> &amp;lt;&lt;span style="color:#ff79c6">time&lt;/span> &lt;span style="color:#50fa7b">class&lt;/span>&lt;span style="color:#ff79c6">=&lt;/span>&lt;span style="color:#f1fa8c">&amp;#34;article-time--lastmod&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3d3f4a"> {{- .Lastmod.Format ( or .Site.Params.dateFormat.lastUpdated &amp;#34;Jan 02, 2006 15:04 MST&amp;#34; ) -}}
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3d3f4a"> &amp;lt;/&lt;span style="color:#ff79c6">time&lt;/span>&amp;gt;
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3d3f4a"> &amp;lt;/&lt;span style="color:#ff79c6">div&lt;/span>&amp;gt;
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3d3f4a"> {{- end -}}&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;/p>
 &lt;p>加上標示的部分，是從 &lt;code>hugo-theme-stack/layouts/partials/article/components/footer.html&lt;/code> 的相關部分修改而來。
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
@@ -57,13 +57,13 @@
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">{{- if ne .Lastmod .Date -}}
-&amp;lt;&lt;span style="color:#f92672">section&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;article-lastmod&amp;#34;&lt;/span>&amp;gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">{{- if ne .Lastmod .Date -}}
+&amp;lt;&lt;span style="color:#ff79c6">section&lt;/span> &lt;span style="color:#50fa7b">class&lt;/span>&lt;span style="color:#ff79c6">=&lt;/span>&lt;span style="color:#f1fa8c">&amp;#34;article-lastmod&amp;#34;&lt;/span>&amp;gt;
 {{ partial &amp;#34;helper/icon&amp;#34; &amp;#34;clock&amp;#34; }}
-&amp;lt;&lt;span style="color:#f92672">span&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#ff79c6">span&lt;/span>&amp;gt;
 {{ T &amp;#34;article.lastUpdatedOn&amp;#34; }} {{ .Lastmod.Format ( or .Site.Params.dateFormat.lastUpdated &amp;#34;Jan 02, 2006 15:04 MST&amp;#34; ) }}
-&amp;lt;/&lt;span style="color:#f92672">span&lt;/span>&amp;gt;
-&amp;lt;/&lt;span style="color:#f92672">section&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#ff79c6">span&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#ff79c6">section&lt;/span>&amp;gt;
 {{- end -}}&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>
@@ -85,16 +85,16 @@
 &lt;/figure>
 &lt;p>來個對照。上半部是修改前，下半部是修改後，看起來應該比較清爽些。&lt;/p>
 &lt;p>先在 &lt;code>hugo-theme-stack/assets/scss/variables.scss&lt;/code> 最上方加上&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scss" data-lang="scss">&lt;span style="color:#66d9ef">@import&lt;/span> &lt;span style="color:#e6db74">url(&amp;#39;https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&amp;amp;display=swap&amp;#39;)&lt;/span>;&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scss" data-lang="scss">&lt;span style="color:#ff79c6">@import&lt;/span> &lt;span style="color:#f1fa8c">url(&amp;#39;https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&amp;amp;display=swap&amp;#39;)&lt;/span>;&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>然後在 &lt;code>--zh-font-family&lt;/code> 加上 &lt;code>&amp;quot;Noto Sans TC&amp;quot;&lt;/code> ，記得要放在所有字型的前面。&lt;/p>
 &lt;p>字體大小的部分，修改所有的 &lt;code>--article-font-size&lt;/code> 為 1.6rem 即可。&lt;/p>
 &lt;h3 id="調整最後編輯日期出現條件">調整最後編輯日期出現條件&lt;/h3>
 &lt;p>因為有在 &lt;code>config.yaml&lt;/code> 上設定 &lt;code>enableGitInfo: true&lt;/code> ，讓文章的最後編輯時間自動設定成 commit 時間，但又因只想顯示日期，變成會顯示文章建立日期等於編輯日期的狀況。&lt;/p>
 &lt;p>筆者想要做的是，若在建立日期同一天編輯文章，也不會出現最後編輯日期的特殊設定。&lt;/p>
 &lt;p>參考這篇&lt;sup id="fnref:4">&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref">4&lt;/a>&lt;/sup>的設定，需要在 &lt;code>hugo-theme-stack/layouts/partials/article/components/details.html&lt;/code> 修改如下（對，就是上面調整編輯時間位置的部分）：
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -102,9 +102,9 @@
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3d3f4a">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3d3f4a">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3d3f4a">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 &lt;/span>&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
@@ -115,27 +115,127 @@
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">{{ if not .Date.IsZero }}
-&amp;lt;&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">{{ if not .Date.IsZero }}
+&amp;lt;&lt;span style="color:#ff79c6">div&lt;/span>&amp;gt;
 {{ partial &amp;#34;helper/icon&amp;#34; &amp;#34;date&amp;#34; }}
-&amp;lt;&lt;span style="color:#f92672">time&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;article-time--published&amp;#34;&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#ff79c6">time&lt;/span> &lt;span style="color:#50fa7b">class&lt;/span>&lt;span style="color:#ff79c6">=&lt;/span>&lt;span style="color:#f1fa8c">&amp;#34;article-time--published&amp;#34;&lt;/span>&amp;gt;
 {{- .Date.Format (or .Site.Params.dateFormat.published &amp;#34;Jan 02, 2006&amp;#34;) -}}
-&amp;lt;/&lt;span style="color:#f92672">time&lt;/span>&amp;gt;
-&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
-&lt;span style="display:block;width:100%;background-color:#3c3d38"> {{ $date := .Date.Format &amp;#34;2006-01-02&amp;#34; }}
-&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38"> {{ $lastmod := .Lastmod.Format &amp;#34;2006-01-02&amp;#34; }}
-&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38"> {{- if and (ne $lastmod $date) (gt .Lastmod .Date) -}}
-&lt;/span> &amp;lt;&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#ff79c6">time&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#ff79c6">div&lt;/span>&amp;gt;
+&lt;span style="display:block;width:100%;background-color:#3d3f4a"> {{ $date := .Date.Format &amp;#34;2006-01-02&amp;#34; }}
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3d3f4a"> {{ $lastmod := .Lastmod.Format &amp;#34;2006-01-02&amp;#34; }}
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3d3f4a"> {{- if and (ne $lastmod $date) (gt .Lastmod .Date) -}}
+&lt;/span> &amp;lt;&lt;span style="color:#ff79c6">div&lt;/span>&amp;gt;
 {{ partial &amp;#34;helper/icon&amp;#34; &amp;#34;edit&amp;#34; }}
-&amp;lt;&lt;span style="color:#f92672">time&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;article-time--lastmod&amp;#34;&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#ff79c6">time&lt;/span> &lt;span style="color:#50fa7b">class&lt;/span>&lt;span style="color:#ff79c6">=&lt;/span>&lt;span style="color:#f1fa8c">&amp;#34;article-time--lastmod&amp;#34;&lt;/span>&amp;gt;
 {{- .Lastmod.Format ( or .Site.Params.dateFormat.lastUpdated &amp;#34;Jan 02, 2006 15:04 MST&amp;#34; ) -}}
-&amp;lt;/&lt;span style="color:#f92672">time&lt;/span>&amp;gt;
-&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#ff79c6">time&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#ff79c6">div&lt;/span>&amp;gt;
 {{- end -}}
 {{ end }}&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>
 真是個有點拐彎抹腳的設定😅&lt;/p>
+&lt;h3 id="程式碼區塊調整">程式碼區塊調整&lt;/h3>
+&lt;p>由於預設的程式碼區塊顏色主題為 monokai ，之後想換成 dracula，但發現套用後看起來有奇怪的效果：
+&lt;figure>&lt;img src="https://lydia7635.github.io/img/post/old-code-block-style.JPG" width="600px"/>
+&lt;/figure>
+程式碼區塊又圍了一圈顏色不同的 padding ，而且區塊並不是和文字切齊，而是對齊文章卡片邊緣。&lt;/p>
+&lt;p>經過一番查詢與修改，最後會設定成這樣：
+&lt;figure>&lt;img src="https://lydia7635.github.io/img/post/new-code-block-style.JPG" width="600px"/>
+&lt;/figure>
+&lt;/p>
+&lt;p>首先將 &lt;code>config.yaml&lt;/code> 的 &lt;code>markup.highlight.style&lt;/code> 設定為 &lt;code>dracula&lt;/code>。
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#ff79c6">markup&lt;/span>:
+&lt;span style="color:#ff79c6">highlight&lt;/span>:
+&lt;span style="color:#ff79c6">style&lt;/span>: dracula&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/p>
+&lt;p>若要將貼齊文章卡片邊緣的設定取消，需修改 &lt;code>hugo-theme-stack/assets/scss/partials/layout/article.scss&lt;/code>，在檔案最下方的段落中，將 &lt;code>.highlight&lt;/code> 那行刪除。
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scss" data-lang="scss"> &lt;span style="color:#6272a4">/// Negative margins
+&lt;/span>&lt;span style="color:#6272a4">&lt;/span> &lt;span style="color:#ff79c6">blockquote&lt;/span>&lt;span style="color:#ff79c6">,&lt;/span>
+&lt;span style="color:#ff79c6">figure&lt;/span>&lt;span style="color:#ff79c6">,&lt;/span>
+&lt;span style="color:#50fa7b">.gallery&lt;/span>&lt;span style="color:#ff79c6">,&lt;/span>
+&lt;span style="color:#50fa7b">.video-wrapper&lt;/span>&lt;span style="color:#ff79c6">,&lt;/span>
+&lt;span style="color:#50fa7b">.table-wrapper&lt;/span>&lt;span style="color:#ff79c6">,&lt;/span>
+&lt;span style="color:#50fa7b">.s_video_simple&lt;/span> {
+&lt;span style="color:#50fa7b">margin-left&lt;/span>&lt;span style="color:#ff79c6">:&lt;/span> &lt;span style="color:#50fa7b">calc&lt;/span>((&lt;span style="color:#50fa7b">var&lt;/span>(&lt;span style="color:#ff79c6">--&lt;/span>card-padding)) &lt;span style="color:#ff79c6">*&lt;/span> &lt;span style="color:#ff79c6">-&lt;/span>&lt;span style="color:#bd93f9">1&lt;/span>);
+&lt;span style="color:#50fa7b">margin-right&lt;/span>&lt;span style="color:#ff79c6">:&lt;/span> &lt;span style="color:#50fa7b">calc&lt;/span>((&lt;span style="color:#50fa7b">var&lt;/span>(&lt;span style="color:#ff79c6">--&lt;/span>card-padding)) &lt;span style="color:#ff79c6">*&lt;/span> &lt;span style="color:#ff79c6">-&lt;/span>&lt;span style="color:#bd93f9">1&lt;/span>);
+&lt;span style="color:#50fa7b">width&lt;/span>&lt;span style="color:#ff79c6">:&lt;/span> &lt;span style="color:#50fa7b">calc&lt;/span>(&lt;span style="color:#bd93f9">100&lt;/span>&lt;span style="color:#8be9fd">%&lt;/span> &lt;span style="color:#ff79c6">+&lt;/span> &lt;span style="color:#50fa7b">var&lt;/span>(&lt;span style="color:#ff79c6">--&lt;/span>card-padding) &lt;span style="color:#ff79c6">*&lt;/span> &lt;span style="color:#bd93f9">2&lt;/span>);
+}&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/p>
+&lt;p>以上是同樣會貼齊文章卡片邊緣的區塊。&lt;/p>
+&lt;p>而若欲產生區塊圓角，也在同樣檔案中設定：
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3d3f4a">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scss" data-lang="scss">&lt;span style="color:#50fa7b">.article-content&lt;/span> {
+&lt;span style="color:#6272a4">// ...
+&lt;/span>&lt;span style="color:#6272a4">&lt;/span> &lt;span style="color:#50fa7b">.highlight&lt;/span> {
+&lt;span style="color:#50fa7b">background-color&lt;/span>&lt;span style="color:#ff79c6">:&lt;/span> &lt;span style="color:#50fa7b">var&lt;/span>(&lt;span style="color:#ff79c6">--&lt;/span>pre&lt;span style="color:#ff79c6">-&lt;/span>background-color);
+&lt;span style="color:#50fa7b">padding&lt;/span>&lt;span style="color:#ff79c6">:&lt;/span> &lt;span style="color:#50fa7b">var&lt;/span>(&lt;span style="color:#ff79c6">--&lt;/span>card-padding);
+&lt;span style="display:block;width:100%;background-color:#3d3f4a"> &lt;span style="color:#50fa7b">border-radius&lt;/span>&lt;span style="color:#ff79c6">:&lt;/span> &lt;span style="color:#bd93f9">5&lt;/span>&lt;span style="color:#8be9fd">px&lt;/span>;
+&lt;/span> &lt;span style="color:#50fa7b">position&lt;/span>&lt;span style="color:#ff79c6">:&lt;/span> relative;
+&lt;span style="color:#6272a4">// ...
+&lt;/span>&lt;span style="color:#6272a4">&lt;/span> }
+&lt;span style="color:#6272a4">// ...
+&lt;/span>&lt;span style="color:#6272a4">&lt;/span>}&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/p>
+&lt;p>但此時仍會因為 padding 顏色不同而顯得突兀。修改 &lt;code>hugo-theme-stack/assets/scss/variables.scss&lt;/code> 最下方為：&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3d3f4a">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scss" data-lang="scss">&lt;span style="color:#ff79c6">[&lt;/span>&lt;span style="color:#ff79c6">data-scheme&lt;/span>&lt;span style="color:#ff79c6">=&lt;/span>&lt;span style="color:#f1fa8c">&amp;#34;dark&amp;#34;&lt;/span>&lt;span style="color:#ff79c6">]&lt;/span> {
+&lt;span style="color:#50fa7b">--pre-text-color&lt;/span>&lt;span style="color:#ff79c6">:&lt;/span> &lt;span style="color:#bd93f9">#f8f8f2&lt;/span>;
+&lt;span style="display:block;width:100%;background-color:#3d3f4a"> &lt;span style="color:#50fa7b">--pre-background-color&lt;/span>&lt;span style="color:#ff79c6">:&lt;/span> &lt;span style="color:#bd93f9">#282a36&lt;/span>;
+&lt;/span> &lt;span style="color:#ff79c6">@import&lt;/span> &lt;span style="color:#f1fa8c">&amp;#34;partials/highlight/dark.scss&amp;#34;&lt;/span>;
+}&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;p>可惜的是，目前不能隨著主題自動設定相對應顏色。&lt;/p>
+&lt;hr>
 &lt;p>未完待續。&lt;/p>
 &lt;section class="footnotes" role="doc-endnotes">
 &lt;hr>
@@ -162,9 +262,9 @@
 &lt;p>如果輸入 &lt;code>sudo apt install git&lt;/code> 讓它重新檢查 git 的版本不會升級，因此需要加入 PPA 個人套件庫。&lt;/p>
 &lt;h2 id="新增-ppa-個人套件庫">新增 PPA 個人套件庫&lt;/h2>
 &lt;p>依照此篇指示&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>，依序輸入下列指令
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fish" data-lang="fish">&lt;span style="color:#a6e22e">sudo&lt;/span> &lt;span style="color:#a6e22e">add-apt-repository&lt;/span> ppa:git-core/ppa
-&lt;span style="color:#a6e22e">sudo&lt;/span> &lt;span style="color:#a6e22e">apt-get&lt;/span> update
-&lt;span style="color:#a6e22e">sudo&lt;/span> &lt;span style="color:#a6e22e">apt-get&lt;/span> install git&lt;/code>&lt;/pre>&lt;/div>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fish" data-lang="fish">&lt;span style="color:#50fa7b">sudo&lt;/span> &lt;span style="color:#50fa7b">add-apt-repository&lt;/span> ppa:git-core/ppa
+&lt;span style="color:#50fa7b">sudo&lt;/span> &lt;span style="color:#50fa7b">apt-get&lt;/span> update
+&lt;span style="color:#50fa7b">sudo&lt;/span> &lt;span style="color:#50fa7b">apt-get&lt;/span> install git&lt;/code>&lt;/pre>&lt;/div>&lt;/p>
 &lt;p>安裝完後，使用 &lt;code>git --version&lt;/code> 確認版本。&lt;/p>
 &lt;p>雖然版本是 2.30.0，比工作站上舊，但還是可以使用 &lt;code>defaultBranch&lt;/code> 了。（22-02-18 更：目前也可以升級成和工作站同為 2.35.1 版）&lt;/p>
 &lt;h2 id="結語">結語&lt;/h2>

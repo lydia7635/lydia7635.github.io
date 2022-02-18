@@ -2,11 +2,11 @@
 <head><meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="前言 雖然 hugo-theme-stack 這個主題，剛開始看的時候覺得簡單乾淨，也很符合個人審美觀，但看久了還是覺得一些地方可以稍加改進。 Theme 掛載 其實這部分和修改並沒有直接的"><title>[Hugo] 修改 Hugo Stack 主題</title>
 <link rel=canonical href=https://lydia7635.github.io/p/modify-hugo-theme-stack/>
-<link rel=stylesheet href=/scss/style.min.1e1619939b4611ee5a8afb0ba738238cbf21bb6e9f3716fb8ecffc5303b5c156.css><meta property="og:title" content="[Hugo] 修改 Hugo Stack 主題">
+<link rel=stylesheet href=/scss/style.min.ae00a78e577fbfd2d758f29bbe4f90e1efdd47d5fc447f5eafb89c1432c5243a.css><meta property="og:title" content="[Hugo] 修改 Hugo Stack 主題">
 <meta property="og:description" content="前言 雖然 hugo-theme-stack 這個主題，剛開始看的時候覺得簡單乾淨，也很符合個人審美觀，但看久了還是覺得一些地方可以稍加改進。 Theme 掛載 其實這部分和修改並沒有直接的">
 <meta property="og:url" content="https://lydia7635.github.io/p/modify-hugo-theme-stack/">
 <meta property="og:site_name" content="Tech Gift Box">
-<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="Hugo"><meta property="article:published_time" content="2022-02-18T00:00:00+00:00"><meta property="article:modified_time" content="2022-02-18T21:13:46+08:00">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="Hugo"><meta property="article:published_time" content="2022-02-18T00:00:00+00:00"><meta property="article:modified_time" content="2022-02-18T22:25:28+08:00">
 <meta name=twitter:site content="@lydia7635">
 <meta name=twitter:creator content="@lydia7635"><meta name=twitter:title content="[Hugo] 修改 Hugo Stack 主題">
 <meta name=twitter:description content="前言 雖然 hugo-theme-stack 這個主題，剛開始看的時候覺得簡單乾淨，也很符合個人審美觀，但看久了還是覺得一些地方可以稍加改進。 Theme 掛載 其實這部分和修改並沒有直接的">
@@ -51,46 +51,46 @@ Development
 <h3 id=將最後編輯時間移至上方>將最後編輯時間移至上方</h3>
 <p>文章上方的 detail 原本就有放像是建立日期與預計閱讀時長<sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup>等時間相關資訊，那為何不將最後編輯時間也放在一起呢？</p>
 <p>從 <code>hugo-theme-stack/layouts/partials/article/components/details.html</code> 先開始編輯。這裡是設定文章詳細資訊的版面配置，可以在文章上方或文章清單中的預覽看到。
-<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
 <table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
-</span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
-</span></span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
-</span></span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
-</span></span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
-</span></span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
-</span></span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
-</span></span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
-</span></span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span></span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span></span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span></span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span></span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span></span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span></span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span></span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
 </span></span></code></pre></td>
 <td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>    &lt;<span style=color:#f92672>div</span>&gt;
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>    &lt;<span style=color:#ff79c6>div</span>&gt;
         {{ partial &#34;helper/icon&#34; &#34;date&#34; }}
-        &lt;<span style=color:#f92672>time</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;article-time--published&#34;</span>&gt;
+        &lt;<span style=color:#ff79c6>time</span> <span style=color:#50fa7b>class</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;article-time--published&#34;</span>&gt;
             {{- .Date.Format (or .Site.Params.dateFormat.published &#34;Jan 02, 2006&#34;) -}}
-        &lt;/<span style=color:#f92672>time</span>&gt;
-    &lt;/<span style=color:#f92672>div</span>&gt;
+        &lt;/<span style=color:#ff79c6>time</span>&gt;
+    &lt;/<span style=color:#ff79c6>div</span>&gt;
 
-<span style=display:block;width:100%;background-color:#3c3d38>    {{- if ne .Lastmod .Date -}}
-</span><span style=display:block;width:100%;background-color:#3c3d38>    &lt;<span style=color:#f92672>div</span>&gt;
-</span><span style=display:block;width:100%;background-color:#3c3d38>        {{ partial &#34;helper/icon&#34; &#34;edit&#34; }}
-</span><span style=display:block;width:100%;background-color:#3c3d38>        &lt;<span style=color:#f92672>time</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;article-time--lastmod&#34;</span>&gt;
-</span><span style=display:block;width:100%;background-color:#3c3d38>            {{- .Lastmod.Format ( or .Site.Params.dateFormat.lastUpdated &#34;Jan 02, 2006 15:04 MST&#34; ) -}}
-</span><span style=display:block;width:100%;background-color:#3c3d38>        &lt;/<span style=color:#f92672>time</span>&gt;
-</span><span style=display:block;width:100%;background-color:#3c3d38>    &lt;/<span style=color:#f92672>div</span>&gt;
-</span><span style=display:block;width:100%;background-color:#3c3d38>    {{- end -}}</span></code></pre></td></tr></table>
+<span style=display:block;width:100%;background-color:#3d3f4a>    {{- if ne .Lastmod .Date -}}
+</span><span style=display:block;width:100%;background-color:#3d3f4a>    &lt;<span style=color:#ff79c6>div</span>&gt;
+</span><span style=display:block;width:100%;background-color:#3d3f4a>        {{ partial &#34;helper/icon&#34; &#34;edit&#34; }}
+</span><span style=display:block;width:100%;background-color:#3d3f4a>        &lt;<span style=color:#ff79c6>time</span> <span style=color:#50fa7b>class</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;article-time--lastmod&#34;</span>&gt;
+</span><span style=display:block;width:100%;background-color:#3d3f4a>            {{- .Lastmod.Format ( or .Site.Params.dateFormat.lastUpdated &#34;Jan 02, 2006 15:04 MST&#34; ) -}}
+</span><span style=display:block;width:100%;background-color:#3d3f4a>        &lt;/<span style=color:#ff79c6>time</span>&gt;
+</span><span style=display:block;width:100%;background-color:#3d3f4a>    &lt;/<span style=color:#ff79c6>div</span>&gt;
+</span><span style=display:block;width:100%;background-color:#3d3f4a>    {{- end -}}</span></code></pre></td></tr></table>
 </div>
 </div></p>
 <p>加上標示的部分，是從 <code>hugo-theme-stack/layouts/partials/article/components/footer.html</code> 的相關部分修改而來。
-<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
 <table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
@@ -100,13 +100,13 @@ Development
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>{{- if ne .Lastmod .Date -}}
-&lt;<span style=color:#f92672>section</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;article-lastmod&#34;</span>&gt;
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>{{- if ne .Lastmod .Date -}}
+&lt;<span style=color:#ff79c6>section</span> <span style=color:#50fa7b>class</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;article-lastmod&#34;</span>&gt;
     {{ partial &#34;helper/icon&#34; &#34;clock&#34; }}
-    &lt;<span style=color:#f92672>span</span>&gt;
+    &lt;<span style=color:#ff79c6>span</span>&gt;
         {{ T &#34;article.lastUpdatedOn&#34; }} {{ .Lastmod.Format ( or .Site.Params.dateFormat.lastUpdated &#34;Jan 02, 2006 15:04 MST&#34; ) }}
-    &lt;/<span style=color:#f92672>span</span>&gt;
-&lt;/<span style=color:#f92672>section</span>&gt;
+    &lt;/<span style=color:#ff79c6>span</span>&gt;
+&lt;/<span style=color:#ff79c6>section</span>&gt;
 {{- end -}}</code></pre></td></tr></table>
 </div>
 </div>
@@ -126,16 +126,16 @@ Development
 </figure>
 <p>來個對照。上半部是修改前，下半部是修改後，看起來應該比較清爽些。</p>
 <p>先在 <code>hugo-theme-stack/assets/scss/variables.scss</code> 最上方加上</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scss data-lang=scss><span style=color:#66d9ef>@import</span> <span style=color:#e6db74>url(&#39;https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&amp;display=swap&#39;)</span>;</code></pre></div>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scss data-lang=scss><span style=color:#ff79c6>@import</span> <span style=color:#f1fa8c>url(&#39;https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&amp;display=swap&#39;)</span>;</code></pre></div>
 <p>然後在 <code>--zh-font-family</code> 加上 <code>"Noto Sans TC"</code> ，記得要放在所有字型的前面。</p>
 <p>字體大小的部分，修改所有的 <code>--article-font-size</code> 為 1.6rem 即可。</p>
 <h3 id=調整最後編輯日期出現條件>調整最後編輯日期出現條件</h3>
 <p>因為有在 <code>config.yaml</code> 上設定 <code>enableGitInfo: true</code> ，讓文章的最後編輯時間自動設定成 commit 時間，但又因只想顯示日期，變成會顯示文章建立日期等於編輯日期的狀況。</p>
 <p>筆者想要做的是，若在建立日期同一天編輯文章，也不會出現最後編輯日期的特殊設定。</p>
 <p>參考這篇<sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup>的設定，需要在 <code>hugo-theme-stack/layouts/partials/article/components/details.html</code> 修改如下（對，就是上面調整編輯時間位置的部分）：
-<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
 <table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
@@ -143,9 +143,9 @@ Development
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
-</span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
-</span></span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
-</span></span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span></span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span></span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
 </span></span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
@@ -156,28 +156,128 @@ Development
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
 </span></code></pre></td>
 <td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>{{ if not .Date.IsZero }}
-    &lt;<span style=color:#f92672>div</span>&gt;
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>{{ if not .Date.IsZero }}
+    &lt;<span style=color:#ff79c6>div</span>&gt;
         {{ partial &#34;helper/icon&#34; &#34;date&#34; }}
-        &lt;<span style=color:#f92672>time</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;article-time--published&#34;</span>&gt;
+        &lt;<span style=color:#ff79c6>time</span> <span style=color:#50fa7b>class</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;article-time--published&#34;</span>&gt;
             {{- .Date.Format (or .Site.Params.dateFormat.published &#34;Jan 02, 2006&#34;) -}}
-        &lt;/<span style=color:#f92672>time</span>&gt;
-    &lt;/<span style=color:#f92672>div</span>&gt;
+        &lt;/<span style=color:#ff79c6>time</span>&gt;
+    &lt;/<span style=color:#ff79c6>div</span>&gt;
 
-<span style=display:block;width:100%;background-color:#3c3d38>    {{ $date := .Date.Format &#34;2006-01-02&#34; }}
-</span><span style=display:block;width:100%;background-color:#3c3d38>    {{ $lastmod := .Lastmod.Format &#34;2006-01-02&#34; }}
-</span><span style=display:block;width:100%;background-color:#3c3d38>    {{- if and (ne $lastmod $date) (gt .Lastmod .Date) -}}
-</span>    &lt;<span style=color:#f92672>div</span>&gt;
+<span style=display:block;width:100%;background-color:#3d3f4a>    {{ $date := .Date.Format &#34;2006-01-02&#34; }}
+</span><span style=display:block;width:100%;background-color:#3d3f4a>    {{ $lastmod := .Lastmod.Format &#34;2006-01-02&#34; }}
+</span><span style=display:block;width:100%;background-color:#3d3f4a>    {{- if and (ne $lastmod $date) (gt .Lastmod .Date) -}}
+</span>    &lt;<span style=color:#ff79c6>div</span>&gt;
         {{ partial &#34;helper/icon&#34; &#34;edit&#34; }}
-        &lt;<span style=color:#f92672>time</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;article-time--lastmod&#34;</span>&gt;
+        &lt;<span style=color:#ff79c6>time</span> <span style=color:#50fa7b>class</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;article-time--lastmod&#34;</span>&gt;
             {{- .Lastmod.Format ( or .Site.Params.dateFormat.lastUpdated &#34;Jan 02, 2006 15:04 MST&#34; ) -}}
-        &lt;/<span style=color:#f92672>time</span>&gt;
-    &lt;/<span style=color:#f92672>div</span>&gt;
+        &lt;/<span style=color:#ff79c6>time</span>&gt;
+    &lt;/<span style=color:#ff79c6>div</span>&gt;
     {{- end -}}
 {{ end }}</code></pre></td></tr></table>
 </div>
 </div>
 真是個有點拐彎抹腳的設定😅</p>
+<h3 id=程式碼區塊調整>程式碼區塊調整</h3>
+<p>由於預設的程式碼區塊顏色主題為 monokai ，之後想換成 dracula，但發現套用後看起來有奇怪的效果：
+<figure><img src=/img/post/old-code-block-style.JPG width=600px>
+</figure>
+程式碼區塊又圍了一圈顏色不同的 padding ，而且區塊並不是和文字切齊，而是對齊文章卡片邊緣。</p>
+<p>經過一番查詢與修改，最後會設定成這樣：
+<figure><img src=/img/post/new-code-block-style.JPG width=600px>
+</figure>
+</p>
+<p>首先將 <code>config.yaml</code> 的 <code>markup.highlight.style</code> 設定為 <code>dracula</code>。
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#ff79c6>markup</span>:
+    <span style=color:#ff79c6>highlight</span>:
+        <span style=color:#ff79c6>style</span>: dracula</code></pre></td></tr></table>
+</div>
+</div></p>
+<p>若要將貼齊文章卡片邊緣的設定取消，需修改 <code>hugo-theme-stack/assets/scss/partials/layout/article.scss</code>，在檔案最下方的段落中，將 <code>.highlight</code> 那行刪除。
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scss data-lang=scss>    <span style=color:#6272a4>/// Negative margins
+</span><span style=color:#6272a4></span>    <span style=color:#ff79c6>blockquote</span><span style=color:#ff79c6>,</span>
+    <span style=color:#ff79c6>figure</span><span style=color:#ff79c6>,</span>
+    <span style=color:#50fa7b>.gallery</span><span style=color:#ff79c6>,</span>
+    <span style=color:#50fa7b>.video-wrapper</span><span style=color:#ff79c6>,</span>
+    <span style=color:#50fa7b>.table-wrapper</span><span style=color:#ff79c6>,</span>
+    <span style=color:#50fa7b>.s_video_simple</span> {
+        <span style=color:#50fa7b>margin-left</span><span style=color:#ff79c6>:</span> <span style=color:#50fa7b>calc</span>((<span style=color:#50fa7b>var</span>(<span style=color:#ff79c6>--</span>card-padding)) <span style=color:#ff79c6>*</span> <span style=color:#ff79c6>-</span><span style=color:#bd93f9>1</span>);
+        <span style=color:#50fa7b>margin-right</span><span style=color:#ff79c6>:</span> <span style=color:#50fa7b>calc</span>((<span style=color:#50fa7b>var</span>(<span style=color:#ff79c6>--</span>card-padding)) <span style=color:#ff79c6>*</span> <span style=color:#ff79c6>-</span><span style=color:#bd93f9>1</span>);
+        <span style=color:#50fa7b>width</span><span style=color:#ff79c6>:</span> <span style=color:#50fa7b>calc</span>(<span style=color:#bd93f9>100</span><span style=color:#8be9fd>%</span> <span style=color:#ff79c6>+</span> <span style=color:#50fa7b>var</span>(<span style=color:#ff79c6>--</span>card-padding) <span style=color:#ff79c6>*</span> <span style=color:#bd93f9>2</span>);
+    }</code></pre></td></tr></table>
+</div>
+</div></p>
+<p>以上是同樣會貼齊文章卡片邊緣的區塊。</p>
+<p>而若欲產生區塊圓角，也在同樣檔案中設定：
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span></span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scss data-lang=scss><span style=color:#50fa7b>.article-content</span> {
+    <span style=color:#6272a4>// ...
+</span><span style=color:#6272a4></span>    <span style=color:#50fa7b>.highlight</span> {
+        <span style=color:#50fa7b>background-color</span><span style=color:#ff79c6>:</span> <span style=color:#50fa7b>var</span>(<span style=color:#ff79c6>--</span>pre<span style=color:#ff79c6>-</span>background-color);
+        <span style=color:#50fa7b>padding</span><span style=color:#ff79c6>:</span> <span style=color:#50fa7b>var</span>(<span style=color:#ff79c6>--</span>card-padding);
+<span style=display:block;width:100%;background-color:#3d3f4a>        <span style=color:#50fa7b>border-radius</span><span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span><span style=color:#8be9fd>px</span>;
+</span>        <span style=color:#50fa7b>position</span><span style=color:#ff79c6>:</span> relative;
+        <span style=color:#6272a4>// ...
+</span><span style=color:#6272a4></span>    }
+    <span style=color:#6272a4>// ...
+</span><span style=color:#6272a4></span>}</code></pre></td></tr></table>
+</div>
+</div></p>
+<p>但此時仍會因為 padding 顏色不同而顯得突兀。修改 <code>hugo-theme-stack/assets/scss/variables.scss</code> 最下方為：</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style=display:block;width:100%;background-color:#3d3f4a><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span></span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scss data-lang=scss><span style=color:#ff79c6>[</span><span style=color:#ff79c6>data-scheme</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;dark&#34;</span><span style=color:#ff79c6>]</span> {
+    <span style=color:#50fa7b>--pre-text-color</span><span style=color:#ff79c6>:</span> <span style=color:#bd93f9>#f8f8f2</span>;
+<span style=display:block;width:100%;background-color:#3d3f4a>    <span style=color:#50fa7b>--pre-background-color</span><span style=color:#ff79c6>:</span> <span style=color:#bd93f9>#282a36</span>;
+</span>    <span style=color:#ff79c6>@import</span> <span style=color:#f1fa8c>&#34;partials/highlight/dark.scss&#34;</span>;
+}</code></pre></td></tr></table>
+</div>
+</div>
+<p>可惜的是，目前不能隨著主題自動設定相對應顏色。</p>
+<hr>
 <p>未完待續。</p>
 <section class=footnotes role=doc-endnotes>
 <hr>
@@ -279,6 +379,7 @@ Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=
 <li><a href=#將最後編輯時間移至上方>將最後編輯時間移至上方</a></li>
 <li><a href=#修改文章卡片圓角與字型字體>修改文章卡片圓角與字型字體</a></li>
 <li><a href=#調整最後編輯日期出現條件>調整最後編輯日期出現條件</a></li>
+<li><a href=#程式碼區塊調整>程式碼區塊調整</a></li>
 </ul>
 </li>
 </ul>

@@ -2,7 +2,7 @@
 <head><meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="利用 PPA 升級 git"><title>[Git] 使用 PPA 將 git 升級成較新版 (Ubuntu)</title>
 <link rel=canonical href=https://lydia7635.github.io/p/upgrade-git-to-newer-version-with-ppa/>
-<link rel=stylesheet href=/scss/style.min.1e1619939b4611ee5a8afb0ba738238cbf21bb6e9f3716fb8ecffc5303b5c156.css><meta property="og:title" content="[Git] 使用 PPA 將 git 升級成較新版 (Ubuntu)">
+<link rel=stylesheet href=/scss/style.min.ae00a78e577fbfd2d758f29bbe4f90e1efdd47d5fc447f5eafb89c1432c5243a.css><meta property="og:title" content="[Git] 使用 PPA 將 git 升級成較新版 (Ubuntu)">
 <meta property="og:description" content="利用 PPA 升級 git">
 <meta property="og:url" content="https://lydia7635.github.io/p/upgrade-git-to-newer-version-with-ppa/">
 <meta property="og:site_name" content="Tech Gift Box">
@@ -53,9 +53,9 @@ Development
 <p>如果輸入 <code>sudo apt install git</code> 讓它重新檢查 git 的版本不會升級，因此需要加入 PPA 個人套件庫。</p>
 <h2 id=新增-ppa-個人套件庫>新增 PPA 個人套件庫</h2>
 <p>依照此篇指示<sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>，依序輸入下列指令
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fish data-lang=fish><span style=color:#a6e22e>sudo</span> <span style=color:#a6e22e>add-apt-repository</span> ppa:git-core/ppa
-<span style=color:#a6e22e>sudo</span> <span style=color:#a6e22e>apt-get</span> update
-<span style=color:#a6e22e>sudo</span> <span style=color:#a6e22e>apt-get</span> install git</code></pre></div></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fish data-lang=fish><span style=color:#50fa7b>sudo</span> <span style=color:#50fa7b>add-apt-repository</span> ppa:git-core/ppa
+<span style=color:#50fa7b>sudo</span> <span style=color:#50fa7b>apt-get</span> update
+<span style=color:#50fa7b>sudo</span> <span style=color:#50fa7b>apt-get</span> install git</code></pre></div></p>
 <p>安裝完後，使用 <code>git --version</code> 確認版本。</p>
 <p>雖然版本是 2.30.0，比工作站上舊，但還是可以使用 <code>defaultBranch</code> 了。（22-02-18 更：目前也可以升級成和工作站同為 2.35.1 版）</p>
 <h2 id=結語>結語</h2>
