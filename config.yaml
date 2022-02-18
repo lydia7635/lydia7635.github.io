@@ -120,6 +120,13 @@ menu:
           params:
               icon: user
 
+        - identifier: categories
+          name: Categories
+          url: categories
+          weight: -80
+          params:
+              icon: categories
+
         - identifier: archives
           name: Archives
           url: archives
