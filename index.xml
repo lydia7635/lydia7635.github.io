@@ -158,7 +158,7 @@
 &lt;span style="color:#ff79c6">style&lt;/span>: dracula&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;/p>
-&lt;p>若要將貼齊文章卡片邊緣的設定取消，需修改 &lt;code>hugo-theme-stack/assets/scss/partials/layout/article.scss&lt;/code>，在檔案最下方的段落中，將 &lt;code>.highlight&lt;/code> 那行刪除。
+&lt;p>若要將貼齊文章卡片邊緣的設定取消，需修改 &lt;code>hugo-theme-stack/assets/scss/partials/layout/article.scss&lt;/code>，在檔案最下方的段落中，將 &lt;code>.highlight&lt;/code> 與 &lt;code>pre&lt;/code>（非 shortcode 產生的程式碼區塊）那行刪除。
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -217,6 +217,7 @@
 &lt;/span>&lt;span style="color:#6272a4">&lt;/span>}&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;/p>
+&lt;p>&lt;code>pre&lt;/code> 的部分也做類似設定。&lt;/p>
 &lt;p>但此時仍會因為 padding 顏色不同而顯得突兀。修改 &lt;code>hugo-theme-stack/assets/scss/variables.scss&lt;/code> 最下方為：&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">

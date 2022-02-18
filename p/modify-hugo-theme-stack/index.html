@@ -200,7 +200,7 @@ Development
         <span style=color:#ff79c6>style</span>: dracula</code></pre></td></tr></table>
 </div>
 </div></p>
-<p>若要將貼齊文章卡片邊緣的設定取消，需修改 <code>hugo-theme-stack/assets/scss/partials/layout/article.scss</code>，在檔案最下方的段落中，將 <code>.highlight</code> 那行刪除。
+<p>若要將貼齊文章卡片邊緣的設定取消，需修改 <code>hugo-theme-stack/assets/scss/partials/layout/article.scss</code>，在檔案最下方的段落中，將 <code>.highlight</code> 與 <code>pre</code>（非 shortcode 產生的程式碼區塊）那行刪除。
 <div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
 <table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
 <pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
@@ -259,6 +259,7 @@ Development
 </span><span style=color:#6272a4></span>}</code></pre></td></tr></table>
 </div>
 </div></p>
+<p><code>pre</code> 的部分也做類似設定。</p>
 <p>但此時仍會因為 padding 顏色不同而顯得突兀。修改 <code>hugo-theme-stack/assets/scss/variables.scss</code> 最下方為：</p>
 <div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
 <table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
