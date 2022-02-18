@@ -177,6 +177,74 @@ markup:
 
 可惜的是，目前不能隨著主題自動設定相對應顏色。
 
+### scrollbar 調整
+覺得頁面與程式碼區塊的 scrollbar 太粗，並且程式碼區塊的 scrollbar 持續顯示有點醜，所以也設定一下。
+
+欲設定頁面的 scroll bar ，在 `hugo-theme-stack/assets/scss/partials/base.scss` 修改：
+{{< highlight scss "hl_lines=2 9-10" >}}
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) transparent;
+}
+/**/
+
+/* scrollbar styles for Chromium */
+::-webkit-scrollbar {
+    width: 1rem;
+    height: 1rem;
+}
+{{< / highlight >}}
+
+`::-webkit-scrollbar` 中的 `height` 也需一併設定，才會套用到程式碼區塊。
+
+欲設定 scrollbar 圓角，也編輯相同檔案：
+
+{{< highlight scss "hl_lines=3" >}}
+/* scrollbar styles for Chromium */
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: var(--scrollbar-thumb);
+}
+{{< / highlight >}}
+
+不過目前 Firefox 並不支援設定 scrollbar 圓角，希望之後會盡快推出。
+
+接下來編輯程式碼區塊中，將滑鼠移至該區塊才顯現 scrollbar 的設定。在 `hugo-theme-stack/assets/scss/partials/layout/article.scss` 加上以下兩個段落：
+{{< highlight scss "hl_lines=5-12 18-25" >}}
+.article-content {
+    // ...
+    pre {
+        // ...
+        ::-webkit-scrollbar-thumb {
+            visibility: hidden;
+        }
+        &:hover {
+            ::-webkit-scrollbar-thumb {
+                visibility: visible;
+            }
+        }
+        // ...
+    }
+    
+    .highlight {
+        // ...
+        ::-webkit-scrollbar-thumb {
+            visibility: hidden;
+        }
+        &:hover {
+            ::-webkit-scrollbar-thumb {
+                visibility: visible;
+            }
+        }
+        // ...
+    }
+}
+{{< / highlight >}}
+
+然後不知為何，使用 `scrollbar-width` 不能對 Firefox 做類似設定：(
+
+經測試，在 Edge 與 Chrome 上應該是能正確顯示的，然而筆者沒有 Safari 的測試環境，所以不知道會不會炸掉😥
+
 ---
 
 未完待續。
