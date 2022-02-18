@@ -25,8 +25,8 @@ categories:
 ## 修改內容
 筆者有在網路上找到一些針對 Stack 這個主題的修改[^2]，大部分也挺符合個人品味，所以也會拿部分來套用。
 
-### 將修改時間移至上方
-文章上方的 detail 原本就有放像是建立日期與預計閱讀時長[^3]等時間相關資訊，那為何不將修改時間也放在一起呢？
+### 將最後編輯時間移至上方
+文章上方的 detail 原本就有放像是建立日期與預計閱讀時長[^3]等時間相關資訊，那為何不將最後編輯時間也放在一起呢？
 
 從 `hugo-theme-stack/layouts/partials/article/components/details.html` 先開始編輯。這裡是設定文章詳細資訊的版面配置，可以在文章上方或文章清單中的預覽看到。
 {{< highlight html "hl_lines=8-15" >}}
@@ -60,7 +60,7 @@ categories:
 {{< / highlight >}}
 參考完之後把這段刪掉。
 
-另外，可以注意到這邊使用其它 icon 來表示修改日期，可以從 [Tabler Icons](https://tablericons.com/) 搜尋想要的 icon 。複製完貼到 `hugo-theme-stack/assets/icons/edit.svg` 中，需做以下修改：
+另外，可以注意到這邊使用其它 icon 來表示最後編輯日期，可以從 [Tabler Icons](https://tablericons.com/) 搜尋想要的 icon 。複製完貼到 `hugo-theme-stack/assets/icons/edit.svg` 中，需做以下修改：
 - `width="24"`
 - `height="24"`
 - `stroke-width="2"`
@@ -87,8 +87,39 @@ categories:
 
 字體大小的部分，修改所有的 `--article-font-size` 為 1.6rem 即可。
 
+### 調整最後編輯日期出現條件
+因為有在 `config.yaml` 上設定 `enableGitInfo: true` ，讓文章的最後編輯時間自動設定成 commit 時間，但又因只想顯示日期，變成會顯示文章建立日期等於編輯日期的狀況。
+
+筆者想要做的是，若在建立日期同一天編輯文章，也不會出現最後編輯日期的特殊設定。
+
+參考這篇[^4]的設定，需要在 `hugo-theme-stack/layouts/partials/article/components/details.html` 修改如下（對，就是上面調整編輯時間位置的部分）：
+{{< highlight html "hl_lines=9-11" >}}
+{{ if not .Date.IsZero }}
+    <div>
+        {{ partial "helper/icon" "date" }}
+        <time class="article-time--published">
+            {{- .Date.Format (or .Site.Params.dateFormat.published "Jan 02, 2006") -}}
+        </time>
+    </div>
+
+    {{ $date := .Date.Format "2006-01-02" }}
+    {{ $lastmod := .Lastmod.Format "2006-01-02" }}
+    {{- if and (ne $lastmod $date) (gt .Lastmod .Date) -}}
+    <div>
+        {{ partial "helper/icon" "edit" }}
+        <time class="article-time--lastmod">
+            {{- .Lastmod.Format ( or .Site.Params.dateFormat.lastUpdated "Jan 02, 2006 15:04 MST" ) -}}
+        </time>
+    </div>
+    {{- end -}}
+{{ end }}
+{{< / highlight >}}
+真是個有點拐彎抹腳的設定😅
+
+
 未完待續。
 
 [^1]: [Modify theme | Hugo theme Stack](https://docs.stack.jimmycai.com/modify-theme/)
 [^2]: [Bigs3cir](https://www.bigs3.com/)
 [^3]: 目前覺得這個功能在本站有點雞肋，就先關掉了
+[^4]: [How to Add a Last Modified Date in Hugo Articles - Simplernerd](https://simplernerd.com/hugo-last-modified-date/)
