@@ -10,7 +10,7 @@ tags:
   - apt
   - PPA
 categories: 
-  - tech
+  - dev
 ---
 
 ## 前言

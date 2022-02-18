@@ -9,7 +9,7 @@ tags:
   - telegram
   - chat bot
 categories: 
-  - tech
+  - dev
 ---
 
 雖然有網站將教學寫得很清楚了，不過還是來記錄一下。

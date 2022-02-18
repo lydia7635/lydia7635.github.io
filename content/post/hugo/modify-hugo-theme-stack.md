@@ -12,7 +12,7 @@ comments: true
 tags: 
     - Hugo
 categories:
-    - tech
+    - dev
 ---
 ## 前言
 雖然 [hugo-theme-stack](https://github.com/CaiJimmy/hugo-theme-stack) 這個主題，剛開始看的時候覺得簡單乾淨，也很符合個人審美觀，但看久了還是覺得一些地方可以稍加改進。
