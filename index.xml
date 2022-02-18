@@ -6,8 +6,8 @@
 &lt;p>雖然 Stack 這個主題很貼心的加入 &lt;code>custom&lt;/code> 檔案，讓使用者自行調整&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>，但等筆者改完後才發現這個東西……（再不看 document 啊 Q_Q）所以筆者並不採用這個方式修改。&lt;/p>
 &lt;h2 id="修改內容">修改內容&lt;/h2>
 &lt;p>筆者有在網路上找到一些針對 Stack 這個主題的修改&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>，大部分也挺符合個人品味，所以也會拿部分來套用。&lt;/p>
-&lt;h3 id="將修改時間移至上方">將修改時間移至上方&lt;/h3>
-&lt;p>文章上方的 detail 原本就有放像是建立日期與預計閱讀時長&lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup>等時間相關資訊，那為何不將修改時間也放在一起呢？&lt;/p>
+&lt;h3 id="將最後編輯時間移至上方">將最後編輯時間移至上方&lt;/h3>
+&lt;p>文章上方的 detail 原本就有放像是建立日期與預計閱讀時長&lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup>等時間相關資訊，那為何不將最後編輯時間也放在一起呢？&lt;/p>
 &lt;p>從 &lt;code>hugo-theme-stack/layouts/partials/article/components/details.html&lt;/code> 先開始編輯。這裡是設定文章詳細資訊的版面配置，可以在文章上方或文章清單中的預覽看到。
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -68,7 +68,7 @@
 &lt;/div>
 &lt;/div>
 參考完之後把這段刪掉。&lt;/p>
-&lt;p>另外，可以注意到這邊使用其它 icon 來表示修改日期，可以從 &lt;a class="link" href="https://tablericons.com/" target="_blank" rel="noopener"
+&lt;p>另外，可以注意到這邊使用其它 icon 來表示最後編輯日期，可以從 &lt;a class="link" href="https://tablericons.com/" target="_blank" rel="noopener"
 >Tabler Icons&lt;/a> 搜尋想要的 icon 。複製完貼到 &lt;code>hugo-theme-stack/assets/icons/edit.svg&lt;/code> 中，需做以下修改：&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>width=&amp;quot;24&amp;quot;&lt;/code>&lt;/li>
@@ -88,6 +88,54 @@
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-scss" data-lang="scss">&lt;span style="color:#66d9ef">@import&lt;/span> &lt;span style="color:#e6db74">url(&amp;#39;https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&amp;amp;display=swap&amp;#39;)&lt;/span>;&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>然後在 &lt;code>--zh-font-family&lt;/code> 加上 &lt;code>&amp;quot;Noto Sans TC&amp;quot;&lt;/code> ，記得要放在所有字型的前面。&lt;/p>
 &lt;p>字體大小的部分，修改所有的 &lt;code>--article-font-size&lt;/code> 為 1.6rem 即可。&lt;/p>
+&lt;h3 id="調整最後編輯日期出現條件">調整最後編輯日期出現條件&lt;/h3>
+&lt;p>因為有在 &lt;code>config.yaml&lt;/code> 上設定 &lt;code>enableGitInfo: true&lt;/code> ，讓文章的最後編輯時間自動設定成 commit 時間，但又因只想顯示日期，變成會顯示文章建立日期等於編輯日期的狀況。&lt;/p>
+&lt;p>筆者想要做的是，若在建立日期同一天編輯文章，也不會出現最後編輯日期的特殊設定。&lt;/p>
+&lt;p>參考這篇&lt;sup id="fnref:4">&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref">4&lt;/a>&lt;/sup>的設定，需要在 &lt;code>hugo-theme-stack/layouts/partials/article/components/details.html&lt;/code> 修改如下（對，就是上面調整編輯時間位置的部分）：
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">{{ if not .Date.IsZero }}
+&amp;lt;&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+{{ partial &amp;#34;helper/icon&amp;#34; &amp;#34;date&amp;#34; }}
+&amp;lt;&lt;span style="color:#f92672">time&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;article-time--published&amp;#34;&lt;/span>&amp;gt;
+{{- .Date.Format (or .Site.Params.dateFormat.published &amp;#34;Jan 02, 2006&amp;#34;) -}}
+&amp;lt;/&lt;span style="color:#f92672">time&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;span style="display:block;width:100%;background-color:#3c3d38"> {{ $date := .Date.Format &amp;#34;2006-01-02&amp;#34; }}
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38"> {{ $lastmod := .Lastmod.Format &amp;#34;2006-01-02&amp;#34; }}
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38"> {{- if and (ne $lastmod $date) (gt .Lastmod .Date) -}}
+&lt;/span> &amp;lt;&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+{{ partial &amp;#34;helper/icon&amp;#34; &amp;#34;edit&amp;#34; }}
+&amp;lt;&lt;span style="color:#f92672">time&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;article-time--lastmod&amp;#34;&lt;/span>&amp;gt;
+{{- .Lastmod.Format ( or .Site.Params.dateFormat.lastUpdated &amp;#34;Jan 02, 2006 15:04 MST&amp;#34; ) -}}
+&amp;lt;/&lt;span style="color:#f92672">time&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+{{- end -}}
+{{ end }}&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+真是個有點拐彎抹腳的設定😅&lt;/p>
 &lt;p>未完待續。&lt;/p>
 &lt;section class="footnotes" role="doc-endnotes">
 &lt;hr>
@@ -102,6 +150,10 @@
 &lt;/li>
 &lt;li id="fn:3" role="doc-endnote">
 &lt;p>目前覺得這個功能在本站有點雞肋，就先關掉了&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:4" role="doc-endnote">
+&lt;p>&lt;a class="link" href="https://simplernerd.com/hugo-last-modified-date/" target="_blank" rel="noopener"
+>How to Add a Last Modified Date in Hugo Articles - Simplernerd&lt;/a>&amp;#160;&lt;a href="#fnref:4" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;/section></description></item><item><title>[Git] 使用 PPA 將 git 升級成較新版 (Ubuntu)</title><link>https://lydia7635.github.io/p/upgrade-git-to-newer-version-with-ppa/</link><pubDate>Sun, 21 Feb 2021 00:00:00 +0000</pubDate><guid>https://lydia7635.github.io/p/upgrade-git-to-newer-version-with-ppa/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
